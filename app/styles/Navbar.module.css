@@ -1,0 +1,50 @@
+/* Navbar.module.css */
+.topbar {
+    background-color: var(--primary-color); /* Adjust the background color if needed */
+}
+  
+  .icon {
+    color: white; /* Adjust the icon color */
+  }
+  
+  .menu {
+    margin: 0; /* Ensure no margin on the nav */
+  }
+  
+  .menuLink {
+    color: black; /* Black font color */
+    font-size: 18px; /* Larger font size */
+    margin: 0 20px; /* Spacing between items */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .menuLink:hover {
+    text-decoration: underline; /* Underline on hover */
+    text-decoration-color: var(--primary-color); /* Underline in primary color */
+    text-underline-offset: 10px; /* Space between text and underline */
+  }
+  
+
+  /* Media Queries for Tablet */
+  @media (max-width: 768px) {
+    .menuLink {
+      font-size: 16px; /* Slightly smaller font size */
+      margin: 0 10px; /* Less spacing between items */
+    }
+
+    .topbar{
+        display: none;
+    }
+  }
+
+  /* Media Queries for Mobile */
+  @media (max-width: 576px) {
+    .menuLink {
+      font-size: 14px; /* Smaller font size */
+      margin: 0 5px; /* Minimal spacing between items */
+    }
+
+    .topbar{
+        display: none;
+    }
+  }
