@@ -7,6 +7,7 @@ import OurServices from "./Components/OurServices";
 import CaseStudies from "./Components/CaseStudies";
 import OurTeam from "./Components/OurTeam";
 import FaqSection from "./Components/FaqSection";
+import PopularNews from "./Components/PopularNews";
 export default function Home() {
   return (
     <>
@@ -18,10 +19,7 @@ export default function Home() {
    <CaseStudies />
    <OurTeam />
    <FaqSection />
-   <Service />
-  
-   <OurServices />
-   
+   <PopularNews />
    </>
 
   );

@@ -1,0 +1,43 @@
+.newsSection {
+    padding: 80px 20px;
+    background-color: white;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .newsCard {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .newsCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .imageWrapper {
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+  }
+  
+  .cardImage {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .cardTitle {
+    font-size: 1.25rem;
+    margin-top: 10px;
+  }
+  
+  .date{
+    color: var(--primary-color) !important;
+  }
