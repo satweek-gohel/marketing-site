@@ -42,6 +42,7 @@
   
   .pointText {
     color: var(--text-color); /* Text color for point text */
+    font-weight: 500;
   }
   
   .consultButton {
@@ -54,6 +55,10 @@
   
   .imageContainer {
     position: relative; /* Position relative for absolute children */
+  }
+
+  .imageContainer img{
+    border-radius: 15px;
   }
   
   .projectCount {
@@ -74,15 +79,18 @@
   @media (max-width: 768px) {
     .heading1 {
       font-size: 1.5rem; /* Smaller font size for mobile */
+      text-align: left;
     }
   
     .heading2 {
-      font-size: 1.75rem; /* Smaller font size for mobile */
+      font-size: 1.75rem;
+      text-align: left; /* Smaller font size for mobile */
     }
   
     .description {
       line-height: 1.5rem;
-      font-size: 0.8rem; /* Reduced line-height for mobile */
+      font-size: 1rem;
+      text-align: left; /* Reduced line-height for mobile */
     }
   
     .projectCount {

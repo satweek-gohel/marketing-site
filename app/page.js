@@ -11,8 +11,9 @@ export default function Home() {
    <HeroSection />
    <Process />
    <ExperienceComponent />
-   <Service />
    <ConsultationSection />
+   <Service />
+  
    <OurServices />
    
    </>
