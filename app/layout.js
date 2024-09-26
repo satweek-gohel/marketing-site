@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';  // Import Bootstrap CSS
 import "./globals.css";  // Your custom global styles
 import CustomNavbar from './Components/Navbar';
 import 'typeface-poppins';
+import Footer from './Components/Footer';
 
 export const metadata = {
   title: "Marketing Site",
@@ -14,6 +15,7 @@ export default function RootLayout({children}) {
       <body>
         <CustomNavbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

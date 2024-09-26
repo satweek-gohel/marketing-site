@@ -1,0 +1,44 @@
+/* Footer Styles */
+.footer {
+    background-color: #001d4c; /* Dark blue background */
+    color: white; /* Text color */
+    position: relative; /* For the SVG overlay */
+    padding: 40px 0; /* Padding for the footer */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Overlay for SVG Background */
+.footer::before {
+    content: '';
+    position: absolute; /* Positioning for background image */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/map.svg') no-repeat center center; /* SVG Background */
+    background-size: cover; /* Cover the entire area */
+    z-index: 0; /* Behind content */
+    opacity: 0.1; /* Adjust opacity for better visibility of text */
+}
+
+.overlay {
+    position: relative; /* Ensure content is above the background */
+    z-index: 1; /* Bring content above the SVG */
+}
+
+.link{
+    text-decoration: none !important;
+    color: rgb(206, 202, 202) ;
+    font-weight: 500;
+
+}
+
+.head{
+    color: white;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.subhead{
+    color: rgb(206, 202, 202) ;
+    margin-top: 10px;
+}
