@@ -1,10 +1,9 @@
 // components/Service.js
 'use client';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import { MdPlayArrow } from 'react-icons/md'; // Play button icon
+import { MdPlayArrow, MdOutlineSecurity } from 'react-icons/md'; // Play button icon
 import { LuDatabaseBackup } from "react-icons/lu";
 import { IoIosCloudUpload } from "react-icons/io";
-import { MdOutlineSecurity } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa6";
 import styles from '../styles/Service.module.css';
 

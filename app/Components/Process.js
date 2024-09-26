@@ -2,9 +2,10 @@
 'use client';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import styles from '../styles/Process.module.css';
-
-// Import process icons (example icons)
-import { FaChartLine, FaCogs, FaClipboardCheck, FaRocket } from 'react-icons/fa';
+import { MdOutlineSecurity } from 'react-icons/md'; // Play button icon
+import { LuDatabaseBackup } from "react-icons/lu";
+import { IoIosCloudUpload } from "react-icons/io";
+import { FaLaptopCode } from "react-icons/fa6";
 
 const Process = () => {
   return (
@@ -12,8 +13,9 @@ const Process = () => {
       <Container>
         {/* Heading and Subheading */}
         <div className="text-center mb-5">
-          <h3 className={styles.heading}>Process</h3>
-          <h2 className={styles.subheading}>How we Works</h2>
+          <h3 className={styles.heading}>FEATURED SERVICES</h3>
+          <h2 className={styles.subheading}>Engaging Creative<bR></bR>
+          minds via technology</h2>
           
         </div>
 
@@ -22,9 +24,9 @@ const Process = () => {
           <Col xs={12} md={6} lg={3} className="mb-4">
             <Card className={`${styles.processCard} ${styles.magicBorder}`}>
               <Card.Body className="text-center">
-                <FaChartLine className={styles.icon} />
-                <Card.Title>Planning</Card.Title>
-                <Card.Text>We start with comprehensive planning to ensure success.</Card.Text>
+              <FaLaptopCode className={styles.icon1} />
+                <Card.Title>IT Consultancy</Card.Title>
+                <Card.Text>Astonished set expression solicitude way admiration</Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -32,9 +34,9 @@ const Process = () => {
           <Col xs={12} md={6} lg={3} className="mb-4">
             <Card className={`${styles.processCard} ${styles.magicBorder}`}>
               <Card.Body className="text-center">
-                <FaCogs className={styles.icon} />
-                <Card.Title>Development</Card.Title>
-                <Card.Text>Our expert team develops custom solutions tailored to your needs.</Card.Text>
+              <MdOutlineSecurity className={styles.icon2} />
+                <Card.Title>Cloud Computing</Card.Title>
+                <Card.Text>Astonished set expression solicitude way admiration</Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -42,9 +44,9 @@ const Process = () => {
           <Col xs={12} md={6} lg={3} className="mb-4">
             <Card className={`${styles.processCard} ${styles.magicBorder}`}>
               <Card.Body className="text-center">
-                <FaClipboardCheck className={styles.icon} />
-                <Card.Title>Testing</Card.Title>
-                <Card.Text>Thorough testing ensures quality and functionality.</Card.Text>
+              <IoIosCloudUpload className={styles.icon3} />
+                <Card.Title>Cyber Security</Card.Title>
+                <Card.Text>Astonished set expression solicitude way admiration</Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -52,9 +54,9 @@ const Process = () => {
           <Col xs={12} md={6} lg={3} className="mb-4">
             <Card className={`${styles.processCard} ${styles.magicBorder}`}>
               <Card.Body className="text-center">
-                <FaRocket className={styles.icon} />
-                <Card.Title>Launch</Card.Title>
-                <Card.Text>We launch and monitor the project for optimal performance.</Card.Text>
+              <LuDatabaseBackup className={styles.icon4} />
+                <Card.Title>Backup Recovery</Card.Title>
+                <Card.Text>Astonished set expression solicitude way admiration.</Card.Text>
               </Card.Body>
             </Card>
           </Col>
