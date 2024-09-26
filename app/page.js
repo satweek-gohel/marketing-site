@@ -5,6 +5,7 @@ import Process from "./Components/Process";
 import ConsultationSection from "./Components/ConsultationSection";
 import OurServices from "./Components/OurServices";
 import CaseStudies from "./Components/CaseStudies";
+import OurTeam from "./Components/OurTeam";
 export default function Home() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Home() {
    <ExperienceComponent />
    <ConsultationSection />
    <CaseStudies />
+   <OurTeam />
    <Service />
   
    <OurServices />
