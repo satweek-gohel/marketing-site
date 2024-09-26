@@ -1,6 +1,6 @@
 .teamSection {
     padding: 80px 20px;
-    background-color: var(--background-color);
+    background-color: white;
   }
   
   .headingContainer {
@@ -27,6 +27,11 @@
   .teamMemberCol {
     margin-bottom: 30px;
   }
+
+.role{
+  font-weight: 500;
+  color: var(--primary-color) !important;
+}
   
   .teamMember {
     position: relative;

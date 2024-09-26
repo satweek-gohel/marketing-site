@@ -87,7 +87,7 @@ const OurTeam = () => {
                 </div>
                 <div className={styles.memberInfo}>
                   <h3>{member.name}</h3>
-                  <p>{member.role}</p>
+                  <p className={styles.role}>{member.role}</p>
                 </div>
               </div>
             </Col>

@@ -1,0 +1,121 @@
+.faqSection {
+    padding: 80px 20px;
+    background-color: var(--background-color);
+  }
+  
+  .subTitle {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+  }
+  
+  .mainTitle {
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .viewAllButton {
+    background-color: var(--primary-color);
+    border: none;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 20px;
+  }
+  
+  .faqItem {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    text-align: left;
+  }
+  
+  .faqHeader {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  
+  .faqHeader:hover {
+    color: var(--primary-color);
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+    margin-right: 30px;
+    color: var(--primary-color);
+  }
+  
+  .faqAnswer {
+    margin-top: 10px;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-left: 55px;
+  }
+  
+  .chevronIcon {
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+  }
+  
+  .rotate {
+    transform: rotate(180deg);
+  }
+  
+
+  @media (max-width: 768px) {
+    .faqHeader {
+      font-size: 1rem;
+    }
+
+    .icon {
+      font-size: 1.2rem;
+      margin-right: 20px;
+    }
+
+    .faqAnswer {
+      font-size: 0.9rem;
+      margin-left: 40px;
+    }
+
+    .chevronIcon {
+      margin-left: 15px;
+    }
+
+    .mainTitle{
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .faqHeader {
+      font-size: 1.1rem;
+    }
+
+    .icon {
+      font-size: 1.3rem;
+      margin-right: 25px;
+    }
+
+    .faqAnswer {
+      font-size: 0.95rem;
+      margin-left: 45px;
+    }
+
+    .chevronIcon {
+      margin-left: 18px;
+    }
+
+    .mainTitle {
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+      line-height: 2.5rem;
+    }
+  }
