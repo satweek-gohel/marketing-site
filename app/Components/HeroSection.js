@@ -22,8 +22,8 @@ const HeroSection = () => {
             <p className={styles.description}>
             Affixed pretend account ten natural. Need eat week even yet that. Incommode delighted he resolving sportsmen do in listening.
             </p>
-            <Button variant="primary" href="/contact" style={{ fontSize: '1.25rem', padding: '10px 20px',borderRadius:'40px' }}>
-              Start Now <span style={{ backgroundColor: 'white', borderRadius: '50%', padding: '5px', marginLeft: '10px',color:'black',fontWeight:'bold' }}>&#8594;</span>
+            <Button variant="primary" href="/contact" style={{ fontSize: '1.25rem', padding: '10px 20px',borderRadius:'10px', fontWeight:'400' }}>
+              Start Now 
             </Button>
           </Col>
           <Col md={6} className="text-center">
