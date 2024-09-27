@@ -50,14 +50,27 @@ const About = () => {
             {/* Vertical Icon List */}
             <div className={styles.iconList}>
               <div className={styles.iconItem}>
-                <TbCertificate className={styles.icon} />
+              <Image
+                  src="/diploma.png" 
+                  alt="award"
+                  width={50} // Adjusted width for icon
+                  height={50} // Adjusted height for icon
+                  className={styles.icon} // Add class for styling if needed
+                />
                 <div className={styles.textContainer}>
                   <h4 className={styles.heading}>Certified Company</h4>
                   <p className={styles.description}>Assurance yet bed was improving furniture man. Distrusts delighted she listening.</p>
                 </div>
               </div>
               <div className={styles.iconItem}>
-                <GiStarsStack className={styles.icon} />
+                {/* <GiStarsStack className={styles.icon} /> */}
+                <Image
+                  src="/Award.png" 
+                  alt="award"
+                  width={50} // Adjusted width for icon
+                  height={50} // Adjusted height for icon
+                  className={styles.icon} // Add class for styling if needed
+                />
                 <div className={styles.textContainer}>
                   <h4 className={styles.heading}>Award Ceremony</h4>
                   <p className={styles.description}>Assurance yet bed was improving furniture man. Distrusts delighted she listening mrs extensive.</p>
