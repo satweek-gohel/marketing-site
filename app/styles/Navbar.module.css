@@ -1,50 +1,50 @@
 /* Navbar.module.css */
-.topbar {
-    background-color: var(--primary-color); /* Adjust the background color if needed */
+.navbar {
+  position: sticky; /* Ensures it stays at the top */
+  top: 0; /* Aligns to the top */
+  z-index: 1030; /* Ensure it's on top of other content */
 }
-  
-  .icon {
-    color: white; /* Adjust the icon color */
-  }
-  
-  .menu {
-    margin: 0; /* Ensure no margin on the nav */
-  }
-  
-  .menuLink {
-    color: black; /* Black font color */
-    font-size: 18px; /* Larger font size */
-    margin: 0 20px; /* Spacing between items */
-    text-decoration: none; /* Remove underline */
-  }
-  
-  .menuLink:hover {
-    text-decoration: underline; /* Underline on hover */
-    text-decoration-color: var(--primary-color); /* Underline in primary color */
-    text-underline-offset: 10px; /* Space between text and underline */
-  }
-  
 
-  /* Media Queries for Tablet */
-  @media (max-width: 768px) {
-    .menuLink {
-      font-size: 16px; /* Slightly smaller font size */
-      margin: 0 10px; /* Less spacing between items */
-    }
+.menu {
+  margin: 0; /* Ensure no margin on the nav */
+}
 
-    .topbar{
-        display: none;
-    }
+.menuLink {
+  color: black; /* Black font color */
+  font-size: 18px; /* Larger font size */
+  margin: 0 20px; /* Spacing between items */
+  text-decoration: none; /* Remove underline */
+}
+
+.menuLink:hover {
+  text-decoration: underline; /* Underline on hover */
+  text-decoration-color: var(--primary-color); /* Underline in primary color */
+  text-underline-offset: 10px; /* Space between text and underline */
+}
+
+/* Media Queries for Tablet and Mobile */
+@media (max-width: 768px) {
+  .navbar .container {
+      display: flex; /* Use flex for the container */
+      justify-content: space-between; /* Space items evenly */
+      align-items: center; /* Center align items */
   }
 
-  /* Media Queries for Mobile */
-  @media (max-width: 576px) {
-    .menuLink {
-      font-size: 14px; /* Smaller font size */
-      margin: 0 5px; /* Minimal spacing between items */
-    }
-
-    .topbar{
-        display: none;
-    }
+  .navbar-brand {
+      flex-grow: 1; /* Make logo take available space */
+      text-align: center; /* Center the logo */
   }
+
+  .navbar-collapse {
+      display: none; /* Hide links on mobile until toggled */
+  }
+}
+
+/* Media Queries for Large Devices */
+@media (min-width: 769px) {
+  .navbar-collapse {
+      display: flex !important; /* Ensure nav links display on larger screens */
+  }
+}
+
+/* Add other styles as needed */

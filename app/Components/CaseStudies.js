@@ -64,6 +64,7 @@ const CaseStudies = () => {
             <div className={styles.headingContainer}>
               <h3 className={styles.heading}>CASE STUDIES</h3>
               <h2 className={styles.subheading}>Our Work Showcase</h2>
+              <div className={styles.line}></div>
             </div>
           </Col>
         </Row>

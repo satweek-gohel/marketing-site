@@ -39,9 +39,10 @@ const PopularNews = () => {
       <section className={styles.newsSection}>
         <Container>
           {/* Subtitle and Title */}
-          <div className="text-center mb-5">
+          <div className="text-center mb-5 d-flex flex-column align-items-center">
             <h5 className={styles.subtitle}>Popular News</h5>
             <h2 className={styles.title}>Latest from Our Blog</h2>
+            <div className={styles.line}></div>
           </div>
 
           {/* News Cards */}

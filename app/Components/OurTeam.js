@@ -53,6 +53,7 @@ const OurTeam = () => {
         <div className={styles.headingContainer}>
           <h2 className={styles.heading}>EXPERT TEAM</h2>
           <p className={styles.subHeading}>Meet Our Leadership</p>
+          <div className={styles.line}></div>
         </div>
 
         <Row className="justify-content-center">

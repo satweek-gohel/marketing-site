@@ -1,7 +1,7 @@
 /* styles/HeroSection.module.css */
 .heroSection {
-    padding: 50px 0;
-    background-color: var(--background-color); 
+    padding: 50px 200px;
+    background-color: white; 
   }
   
   .title {

@@ -6,6 +6,10 @@
   .headingContainer {
     text-align: center;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .heading {
@@ -18,9 +22,6 @@
     font-size: 2.2rem;
     color: var(--text-color);
     margin-top: 10px;
-    text-decoration: underline var(--primary-color);
-    text-underline-offset: 20px;
-
   }
   
   .carousel {
@@ -100,3 +101,33 @@
     color: var(--text-color);
   }
   
+  .line{
+    border-bottom: 3px solid var(--primary-color);
+    width: 15%;
+    margin-top: 15px;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .statValue {
+      font-size: 2rem; /* Adjust font size for tablets */
+    }
+
+    .statLabel {
+      font-size: 1rem; /* Adjust font size for tablets */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .statValue {
+      font-size: 1.5rem; /* Adjust font size for mobile */
+    }
+
+    .statLabel {
+      font-size: 0.8rem; /* Adjust font size for mobile */
+    }
+
+    .subheading{
+      font-size: 1.5rem;
+    }
+  }

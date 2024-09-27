@@ -8,6 +8,7 @@
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 20px;
+    font-weight: 600;
   }
   
   .subheading {
@@ -15,7 +16,7 @@
     color: var(--text-color);
     line-height: 3.3rem;
     margin-bottom: 40px;
-    font-weight: 600;
+    font-weight: 500;
   }
   
   .processCard {
@@ -71,3 +72,41 @@
     margin-bottom: 15px;
   }
   
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .icon1, .icon2, .icon3, .icon4 {
+      font-size: 2rem; /* Smaller icon size for tablets and mobile */
+    }
+
+    .processCard {
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .heading {
+      font-size: 1.5rem; /* Adjust heading size for smaller screens */
+    }
+
+    .subheading {
+      font-size: 1.25rem; /* Adjust subheading size for smaller screens */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .icon1, .icon2, .icon3, .icon4 {
+      font-size: 1.5rem; /* Even smaller icon size for mobile */
+    }
+
+    .processCard {
+      padding: 10px; /* Further adjust padding for mobile screens */
+    }
+
+    .heading {
+      font-size: 1.25rem;
+      margin-bottom: 10; /* Further adjust heading size for mobile screens */
+    }
+
+    .subheading {
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+  }

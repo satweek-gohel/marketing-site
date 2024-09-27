@@ -10,8 +10,9 @@
   
   .title {
     font-size: 2.5rem;
-    font-weight: bold;
+    font-weight: 500;
     color: var(--text-color);
+    margin-top: 10px;
   }
   
   .newsCard {
@@ -40,4 +41,48 @@
   
   .date{
     color: var(--primary-color) !important;
+  }
+
+  .line{
+    border-bottom: 3px solid var(--primary-color);
+    width: 15%;
+    margin-top: 10px;
+  }
+
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .newsSection {
+      padding: 40px 10px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .cardTitle {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .newsSection {
+      padding: 60px 15px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+    }
+
+    .title {
+      font-size: 2.25rem;
+    }
+
+    .cardTitle {
+      font-size: 1.15rem;
+    }
   }

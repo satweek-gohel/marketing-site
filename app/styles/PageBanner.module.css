@@ -1,0 +1,49 @@
+.banner {
+    position: relative;
+    height: 60vh; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax scrolling effect */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Full black overlay with some transparency */
+    z-index: 1;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 2; /* Ensure the text is above the overlay */
+    padding-left: 50px; /* Push the text to the left side */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center text */
+    height: 100%; /* Make content fill the full height */
+  }
+  
+  .title {
+    font-size: 48px;
+    font-weight: bold;
+    color: white; /* White text color */
+    text-transform: uppercase;
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 32px;
+    }
+  
+    .content {
+      padding-left: 20px; /* Reduce padding on smaller screens */
+    }
+  }
+  
