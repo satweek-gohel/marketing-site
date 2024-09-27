@@ -4,18 +4,22 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import Image from 'next/image';
 import styles from '../styles/HeroSection.module.css'; // Create a CSS file for styles
 import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const HeroSection = () => {
   useEffect(() => {
-    // This effect can be used to track page views or any other analytics
-    // You can add any additional optimization or tracking logic here
+    AOS.init({
+      duration: 1000, 
+      once: true,
+    });
   }, []);
 
   return (
     <section className={styles.heroSection}>
       <Container>
         <Row className="align-items-center">
-          <Col md={6} className="text-md-start text-center">
+          <Col md={6} className="text-md-start text-center" data-aos="fade-right">
             <h1 className={styles.title}>Optimize IT Systems</h1>
             <h2 className={styles.heading}>Creating a better</h2>
             <h2 className={styles.heading2}>IT Solutions</h2>
@@ -26,7 +30,7 @@ const HeroSection = () => {
               Start Now 
             </Button>
           </Col>
-          <Col md={6} className="text-center">
+          <Col md={6} className="text-center" data-aos="fade-left">
             <Image
               src="/hero-banner.png" 
               alt="Hero Image"

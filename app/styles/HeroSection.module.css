@@ -68,3 +68,35 @@
       margin-top: 30px; /* Maintain aspect ratio */
     }
   }
+
+  /* Media Queries for Tablet */
+  @media (max-width: 768px) {
+    .heroSection {
+      padding: 40px 50px; /* Adjust padding for tablet */
+    }
+
+    .title {
+      font-size: 1.1rem; /* Adjust font size for tablet */
+      margin-bottom: 18px;
+    }
+
+    .heading{
+        font-size: 2.5rem;
+    }
+
+    .heading2 {
+      font-size: 3rem; /* Adjust font size for tablet */
+      margin-bottom: 12px;
+    }
+
+    .description {
+      font-size: 0.95rem; /* Adjust font size for tablet */
+      margin-bottom: 25px;
+    }
+
+    .heroImage {
+      width: 100%; /* Ensure image takes full width on tablet */
+      height: auto;
+      margin-top: 25px; /* Maintain aspect ratio */
+    }
+  }

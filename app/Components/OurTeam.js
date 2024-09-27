@@ -1,8 +1,10 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaFacebook, FaTwitter, FaLinkedin, FaUser } from 'react-icons/fa';
 import styles from '../styles/OurTeam.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const teamMembers = [
   {
@@ -43,6 +45,13 @@ const teamMembers = [
 const OurTeam = () => {
   const [activeMember, setActiveMember] = useState(null);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   const handleIconClick = (index) => {
     setActiveMember(index === activeMember ? null : index); // Toggle logic
   };
@@ -50,7 +59,7 @@ const OurTeam = () => {
   return (
     <section className={styles.teamSection}>
       <Container>
-        <div className={styles.headingContainer}>
+        <div className={styles.headingContainer} data-aos="fade-up">
           <h2 className={styles.heading}>EXPERT TEAM</h2>
           <p className={styles.subHeading}>Meet Our Leadership</p>
           <div className={styles.line}></div>
@@ -58,7 +67,7 @@ const OurTeam = () => {
 
         <Row className="justify-content-center">
           {teamMembers.map((member, index) => (
-            <Col xs={12} sm={6} md={4} key={member.id} className={styles.teamMemberCol}>
+            <Col xs={12} sm={6} md={4} key={member.id} className={styles.teamMemberCol} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
               <div className={styles.teamMember}>
                 <div className={styles.imageWrapper}>
                   <img
@@ -75,13 +84,13 @@ const OurTeam = () => {
                       className={`${styles.socialIcons} ${activeMember === index ? styles.visible : ''}`}
                     >
                       <a href={member.socials.facebook} target="_blank" rel="noreferrer">
-                        <FaFacebook />
+                        <FaFacebook style={{ color: '#3b5998', backgroundColor: 'white', borderRadius: '50%', padding: '5px' }} />
                       </a>
                       <a href={member.socials.twitter} target="_blank" rel="noreferrer">
-                        <FaTwitter />
+                        <FaTwitter style={{ color: '#1da1f2', backgroundColor: 'white', borderRadius: '50%', padding: '5px' }} />
                       </a>
                       <a href={member.socials.linkedin} target="_blank" rel="noreferrer">
-                        <FaLinkedin />
+                        <FaLinkedin style={{ color: '#0077b5', backgroundColor: 'white', borderRadius: '50%', padding: '5px' }} />
                       </a>
                     </div>
                   </div>

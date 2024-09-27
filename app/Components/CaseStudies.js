@@ -3,13 +3,15 @@ import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Slider from "react-slick";
 import styles from '../styles/CaseStudies.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Carousel images
 const carouselImages = [
-  {id:1, src: '/cs1.jpg', title: 'IT Consultancy', description: 'Technology' },
-  {id:2, src: '/cs2.jpg', title: 'Analysis Of Security', description: 'Technology' },
-  {id:3, src: '/cs3.jpg', title: 'Social Media App', description: 'Technology' },
-  {id:4, src: '/cs4.jpg', title: 'Cyber Security', description: 'Technology' },
+  {id:1, src: '/cs1.jpg', title: 'IT Consultancy', description: '- Technology' },
+  {id:2, src: '/cs2.jpg', title: 'Analysis Of Security', description: '- Technology' },
+  {id:3, src: '/cs3.jpg', title: 'Social Media App', description: '- Technology' },
+  {id:4, src: '/cs4.jpg', title: 'Cyber Security', description: '- Technology' },
 ];
 
 const statsData = [
@@ -23,6 +25,11 @@ const CaseStudies = () => {
   const [counters, setCounters] = useState([0, 0, 0, 0]);
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      once: true,
+    });
+
     // Animate counters from 0 to target value
     statsData.forEach((item, index) => {
       const interval = setInterval(() => {
@@ -61,7 +68,7 @@ const CaseStudies = () => {
       <Container>
         <Row>
           <Col>
-            <div className={styles.headingContainer}>
+            <div className={styles.headingContainer} data-aos="fade-up">
               <h3 className={styles.heading}>CASE STUDIES</h3>
               <h2 className={styles.subheading}>Our Work Showcase</h2>
               <div className={styles.line}></div>
@@ -74,7 +81,7 @@ const CaseStudies = () => {
           <Col>
             <Slider {...settings} className={styles.carousel}>
               {carouselImages.map((img, index) => (
-                <div key={img.id} className={styles.imageWrapper}>
+                <div key={img.id} className={styles.imageWrapper} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
                   <img src={img.src} alt={img.title} className={styles.carouselImage} />
                   <div className={styles.overlay}>
                     <div className={styles.overlayContent}>
@@ -91,7 +98,7 @@ const CaseStudies = () => {
         {/* Stats Section */}
         <Row className={styles.statsRow}>
           {statsData.map((stat, index) => (
-            <Col xs={6} md={3} key={stat.id} className={styles.statsCol}>
+            <Col xs={6} md={3} key={stat.id} className={styles.statsCol} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
               <h3 className={styles.statValue}>{counters[index]}</h3>
               <p className={styles.statLabel}>{stat.label}</p>
             </Col>

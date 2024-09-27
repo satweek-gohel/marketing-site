@@ -7,14 +7,24 @@ import { FaCode, FaProjectDiagram, FaTools } from 'react-icons/fa'; // Example i
 import styles from '../styles/About.module.css'; // Create a CSS file for styles
 import { TbCertificate } from "react-icons/tb";
 import { GiStarsStack } from "react-icons/gi";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const About = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      once: true,
+    });
+  }, []);
+
   return (
     <section className={styles.aboutSection}>
       <Container>
         <Row className="align-items-center">
           {/* Left Side */}
-          <Col md={6} className="position-relative">
+          <Col md={6} className="position-relative" data-aos="fade-right">
             <Image
               src="/about1.jpg" // Replace with your image path
               alt="About Left Image"
@@ -24,7 +34,7 @@ const About = () => {
               className={styles.leftImage}
             />
             {/* Overlay Card */}
-            <Card className={`${styles.overlayCard} position-absolute`}>
+            <Card className={`${styles.overlayCard} position-absolute`} data-aos="fade-up" data-aos-delay="200">
               <Card.Body>
                 <Card.Title>20 years of experience</Card.Title>
               </Card.Body>
@@ -37,11 +47,13 @@ const About = () => {
               width={600}
               height={400}
               className={styles.hiddenImage}
+              data-aos="fade-left"
+              data-aos-delay="400"
             />
           </Col>
 
           {/* Right Side */}
-          <Col md={6} className="text-md-start text-center">
+          <Col md={6} className="text-md-start text-center" data-aos="fade-left">
             <h2 className={styles.heading2}>We Help IT Companies Scale Engineering Capacity</h2>
             <p className={styles.description2}>
               Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight sang lose.
@@ -49,7 +61,7 @@ const About = () => {
 
             {/* Vertical Icon List */}
             <div className={styles.iconList}>
-              <div className={styles.iconItem}>
+              <div className={styles.iconItem} data-aos="fade-up" data-aos-delay="100">
               <Image
                   src="/diploma.png" 
                   alt="award"
@@ -62,7 +74,7 @@ const About = () => {
                   <p className={styles.description}>Assurance yet bed was improving furniture man. Distrusts delighted she listening.</p>
                 </div>
               </div>
-              <div className={styles.iconItem}>
+              <div className={styles.iconItem} data-aos="fade-up" data-aos-delay="200">
                 {/* <GiStarsStack className={styles.icon} /> */}
                 <Image
                   src="/Award.png" 
@@ -76,7 +88,7 @@ const About = () => {
                   <p className={styles.description}>Assurance yet bed was improving furniture man. Distrusts delighted she listening mrs extensive.</p>
                 </div>
               </div>
-              <div className={styles.iconItem}>
+              <div className={styles.iconItem} data-aos="fade-up" data-aos-delay="300">
                 <Image
                   src="/sign.png" 
                   alt="Founders Sign"

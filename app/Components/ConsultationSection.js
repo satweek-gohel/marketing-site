@@ -4,14 +4,24 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaThumbsUp, FaGlobeAmericas } from 'react-icons/fa'; // Importing icons
 import styles from '../styles/ConsultationSection.module.css'; // Import your CSS file
 import Image from 'next/image'; // Use Next.js Image component
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ConsultationSection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      once: true,
+    });
+  }, []);
+
   return (
     <section className={styles.consultationSection}>
       <Container>
         <Row className="align-items-center">
           {/* Left Side */}
-          <Col md={6} className="text-md-start text-center">
+          <Col md={6} className="text-md-start text-center" data-aos="fade-right">
             <h2 className={styles.heading1}>― Works About</h2>
             <h2 className={styles.heading2}>Trusted by 5,000+<br></br>
             Happy Customers</h2>
@@ -32,7 +42,7 @@ const ConsultationSection = () => {
           </Col>
 
           {/* Right Side */}
-          <Col md={6} className="text-center">
+          <Col md={6} className="text-center" data-aos="fade-left">
             <div className={styles.imageContainer}>
               <Image 
                 src="/consultation.jpg" // Replace with your image path
@@ -41,7 +51,7 @@ const ConsultationSection = () => {
                 width={500} 
                 height={400} 
               />
-              <div className={styles.projectCount}>
+              <div className={styles.projectCount} data-aos="fade-up" data-aos-delay="200">
                 <span style={{fontSize:'3rem !important'}}>500+</span>  <br></br>Projects Completed
               </div>
             </div>
