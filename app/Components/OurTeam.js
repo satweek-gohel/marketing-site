@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaFacebook, FaTwitter, FaLinkedin, FaUser } from 'react-icons/fa';
-import styles from '../styles/OurTeam.module.css'; // Import your CSS module
+import styles from '../styles/OurTeam.module.css';
 
 const teamMembers = [
   {
-    id:1,
+    id: 1,
     name: 'John Doe',
     role: 'Lead Developer',
     imageUrl: '/team1.jpg',
@@ -17,7 +17,7 @@ const teamMembers = [
     },
   },
   {
-    id:2,
+    id: 2,
     name: 'Jane Smith',
     role: 'Project Manager',
     imageUrl: '/team2.jpg',
@@ -28,7 +28,7 @@ const teamMembers = [
     },
   },
   {
-    id:3,
+    id: 3,
     name: 'Emily White',
     role: 'UI/UX Designer',
     imageUrl: '/team3.jpg',
@@ -44,7 +44,7 @@ const OurTeam = () => {
   const [activeMember, setActiveMember] = useState(null);
 
   const handleIconClick = (index) => {
-    setActiveMember(index === activeMember ? null : index);
+    setActiveMember(index === activeMember ? null : index); // Toggle logic
   };
 
   return (
@@ -71,19 +71,19 @@ const OurTeam = () => {
                       className={styles.userIcon}
                       onClick={() => handleIconClick(index)}
                     />
-                    {activeMember === index && (
-                      <div className={styles.socialIcons}>
-                        <a href={member.socials.facebook} target="_blank" rel="noreferrer">
-                          <FaFacebook />
-                        </a>
-                        <a href={member.socials.twitter} target="_blank" rel="noreferrer">
-                          <FaTwitter />
-                        </a>
-                        <a href={member.socials.linkedin} target="_blank" rel="noreferrer">
-                          <FaLinkedin />
-                        </a>
-                      </div>
-                    )}
+                    <div
+                      className={`${styles.socialIcons} ${activeMember === index ? styles.visible : ''}`}
+                    >
+                      <a href={member.socials.facebook} target="_blank" rel="noreferrer">
+                        <FaFacebook />
+                      </a>
+                      <a href={member.socials.twitter} target="_blank" rel="noreferrer">
+                        <FaTwitter />
+                      </a>
+                      <a href={member.socials.linkedin} target="_blank" rel="noreferrer">
+                        <FaLinkedin />
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className={styles.memberInfo}>
