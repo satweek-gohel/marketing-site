@@ -13,6 +13,8 @@ const ConsultationSection = () => {
     AOS.init({
       duration: 1000, 
       once: true,
+      mirror: false,
+      offset: 0, // Adjust offset to prevent horizontal scrollbar
     });
   }, []);
 
@@ -21,7 +23,7 @@ const ConsultationSection = () => {
       <Container>
         <Row className="align-items-center">
           {/* Left Side */}
-          <Col md={6} className="text-md-start text-center" data-aos="fade-right">
+          <Col md={6} className="text-md-start text-center" data-aos="fade-up">
             <h2 className={styles.heading1}>― Works About</h2>
             <h2 className={styles.heading2}>Trusted by 5,000+<br></br>
             Happy Customers</h2>
@@ -42,7 +44,7 @@ const ConsultationSection = () => {
           </Col>
 
           {/* Right Side */}
-          <Col md={6} className="text-center" data-aos="fade-left">
+          <Col md={6} className="text-center" data-aos="fade-up" data-aos-delay="200">
             <div className={styles.imageContainer}>
               <Image 
                 src="/consultation.jpg" // Replace with your image path
@@ -51,7 +53,7 @@ const ConsultationSection = () => {
                 width={500} 
                 height={400} 
               />
-              <div className={styles.projectCount} data-aos="fade-up" data-aos-delay="200">
+              <div className={styles.projectCount} data-aos="fade-up" data-aos-delay="400">
                 <span style={{fontSize:'3rem !important'}}>500+</span>  <br></br>Projects Completed
               </div>
             </div>

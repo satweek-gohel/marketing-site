@@ -15,6 +15,8 @@ const FaqSection = () => {
     AOS.init({
       duration: 1000,
       once: true,
+      mirror: false,
+      offset: 0, // Adjust offset to prevent horizontal scrollbar
     });
   }, []);
 
@@ -50,14 +52,14 @@ const FaqSection = () => {
         <Container>
           <Row>
             {/* Left side with heading and button */}
-            <Col md={5} className="text-md-start text-center mb-4" data-aos="fade-right">
+            <Col md={5} className="text-md-start text-center mb-4" data-aos="fade-up">
               <h5 className={styles.subTitle}>- FAQ</h5>
               <h2 className={styles.mainTitle}>Frequently Asked Questions</h2>
               <Button variant="outline-primary" className={styles.viewAllButton}>View All</Button>
             </Col>
 
             {/* Right side with FAQ accordion */}
-            <Col md={7} data-aos="fade-left">
+            <Col md={7} data-aos="fade-up">
               {faqs.map((faq, index) => (
                 <div key={index} className={styles.faqItem} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
                   <div

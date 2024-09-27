@@ -76,10 +76,12 @@ export default function CustomNavbar() {
             </Nav>
            
             {/* Sidebar Toggle Button */}
-            <Button variant="outline" onClick={handleSidebarShow}>
+           
+          </Navbar.Collapse>
+
+          <Button variant="outline" onClick={handleSidebarShow}>
               <MdMenuOpen color="var(--text-color)" size={25} />
             </Button>
-          </Navbar.Collapse>
         </Container>
       </Navbar>
 

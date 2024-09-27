@@ -15,6 +15,8 @@ const Process = () => {
     AOS.init({
       duration: 1000, 
       once: true,
+      mirror: false, // Ensure no mirroring of animations
+      offset: 200, // Adjust offset to prevent horizontal scrollbar
     });
   }, []);
 

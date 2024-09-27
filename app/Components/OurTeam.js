@@ -49,6 +49,7 @@ const OurTeam = () => {
     AOS.init({
       duration: 1000,
       once: true,
+      mirror: false,
     });
   }, []);
 

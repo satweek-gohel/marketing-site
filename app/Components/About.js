@@ -16,6 +16,8 @@ const About = () => {
     AOS.init({
       duration: 1000, 
       once: true,
+      mirror: false,
+      offset: 0, // Adjust offset to prevent horizontal scrollbar
     });
   }, []);
 
@@ -24,7 +26,7 @@ const About = () => {
       <Container>
         <Row className="align-items-center">
           {/* Left Side */}
-          <Col md={6} className="position-relative" data-aos="fade-right">
+          <Col md={6} className="position-relative" data-aos="fade-up">
             <Image
               src="/about1.jpg" // Replace with your image path
               alt="About Left Image"
@@ -47,13 +49,13 @@ const About = () => {
               width={600}
               height={400}
               className={styles.hiddenImage}
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-delay="400"
             />
           </Col>
 
           {/* Right Side */}
-          <Col md={6} className="text-md-start text-center" data-aos="fade-left">
+          <Col md={6} className="text-md-start text-center" data-aos="fade-up">
             <h2 className={styles.heading2}>We Help IT Companies Scale Engineering Capacity</h2>
             <p className={styles.description2}>
               Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight sang lose.
@@ -77,7 +79,7 @@ const About = () => {
               <div className={styles.iconItem} data-aos="fade-up" data-aos-delay="200">
                
                 <Image
-                  src="/award.png" 
+                  src="/award-star-with-olive-branches.png" 
                   alt="award"
                   width={50} // Adjusted width for icon
                   height={50} // Adjusted height for icon

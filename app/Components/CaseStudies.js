@@ -28,6 +28,8 @@ const CaseStudies = () => {
     AOS.init({
       duration: 1000, 
       once: true,
+      mirror: false,
+      offset: 0, // Adjust offset to prevent horizontal scrollbar
     });
 
     // Animate counters from 0 to target value
