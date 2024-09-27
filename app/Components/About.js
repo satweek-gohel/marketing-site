@@ -75,9 +75,9 @@ const About = () => {
                 </div>
               </div>
               <div className={styles.iconItem} data-aos="fade-up" data-aos-delay="200">
-                {/* <GiStarsStack className={styles.icon} /> */}
+               
                 <Image
-                  src="/Award.png" 
+                  src="/award.png" 
                   alt="award"
                   width={50} // Adjusted width for icon
                   height={50} // Adjusted height for icon
