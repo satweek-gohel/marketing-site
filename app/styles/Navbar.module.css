@@ -1,50 +1,97 @@
-/* Navbar.module.css */
-.navbar {
-  position: sticky; /* Ensures it stays at the top */
-  top: 0; /* Aligns to the top */
-  z-index: 1030; /* Ensure it's on top of other content */
-}
-
-.menu {
-  margin: 0; /* Ensure no margin on the nav */
-}
-
 .menuLink {
-  color: black; /* Black font color */
-  font-size: 18px; /* Larger font size */
-  margin: 0 20px; /* Spacing between items */
-  text-decoration: none; /* Remove underline */
+  color: black;
+  font-size: 18px;
+  margin: 0 20px;
+  text-decoration: none;
 }
 
 .menuLink:hover {
-  text-decoration: underline; /* Underline on hover */
-  text-decoration-color: var(--primary-color); /* Underline in primary color */
-  text-underline-offset: 10px; /* Space between text and underline */
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  text-underline-offset: 10px;
 }
 
-/* Media Queries for Tablet and Mobile */
+/* Sidebar Toggle Button Styles */
+.sidebarToggle {
+  border: none;
+  background-color: transparent;
+  margin-left: 10px;
+}
+
+/* Sidebar Styling */
+.stitle {
+  color: var(--text-color);
+  border-bottom: 2px dashed rgb(204, 202, 202);
+  padding: 10px;
+  font-weight: 700;
+}
+
+.sicon {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.socialIcon {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.stitle{
+  color: var(--text-color);
+  border-bottom: 2px dashed rgb(204, 202, 202);
+  padding: 10px;
+  font-weight: 700;
+}
+.sicon{
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+.sstitle{
+  font-size: 1.1rem;
+  margin-left: 20px;
+  color: var(--text-color);
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.ssdes{
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
+
+.infobox{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+}
+
+
+
+.menu2 li{
+  list-style: none;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-left: 0;
+  font-size: 1.5rem;
+}
+
+/* Menu2 Links */
+.menu2 li {
+  list-style: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
-  .navbar .container {
-      display: flex; /* Use flex for the container */
-      justify-content: space-between; /* Space items evenly */
-      align-items: center; /* Center align items */
-  }
-
-  .navbar-brand {
-      flex-grow: 1; /* Make logo take available space */
-      text-align: center; /* Center the logo */
-  }
-
   .navbar-collapse {
-      display: none; /* Hide links on mobile until toggled */
+    display: none;
+  }
+
+  .sidebarToggle {
+    margin-left: 15px;
   }
 }
-
-/* Media Queries for Large Devices */
-@media (min-width: 769px) {
-  .navbar-collapse {
-      display: flex !important; /* Ensure nav links display on larger screens */
-  }
-}
-
-/* Add other styles as needed */

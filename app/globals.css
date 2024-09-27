@@ -34,3 +34,16 @@ button {
 .navbar{
   position: sticky;
 }
+
+.slick-dots li button:before {
+  font-size: 0.8rem !important; /* Increase the size of the dots */
+}
+
+.slick-dots li button:hover:before {
+  color: var(--primary-color) !important; /* Change color on hover to primary color */
+}
+
+.slick-dots li.slick-active button:before {
+  color:var(--primary-color) !important;
+}
+
