@@ -12,18 +12,30 @@ const Footer = () => {
         <Container>
           <Row className="py-5">
             {/* Column 1: Logo and Description */}
-            <Col md={3} className="text-white">
+            <Col md={4} className="text-white p-5 mx-md-3 " style={{border:'2px solid white'}}>
               <Image className={styles.logo} src='/logo-light.png'
               height={50}
               width={150}
               >
-
               </Image>
-              <p className='mt-3'>Your description goes here. Briefly describe your company and its mission.</p>
+              <p className='mt-3'>
+              Happen active county. Winding for the morning am shyness evident to poor. Garrets because elderly new.
+
+
+              </p>
+              <div className="mt-4">
+               
+                <div className="input-group ">
+                  <input type="email" placeholder="Enter your email" className="form-control" />
+                  <button className="btn btn-primary">
+                    <IoLogoGooglePlaystore size={20} />
+                  </button>
+                </div>
+              </div>
             </Col>
 
             {/* Column 2: Company Menu Items */}
-            <Col md={3} className="text-white">
+            <Col md={2} className="text-white">
               <h5 className={styles.head}>Company</h5>
               <ul className="list-unstyled">
                 <li className='my-3'><Link href="/about" className={`${styles.link} my-2`}>About Us</Link></li>
@@ -37,7 +49,7 @@ const Footer = () => {
             </Col>
 
             {/* Column 3: Solutions Menu Items */}
-            <Col md={3} className="text-white">
+            <Col md={2} className="text-white">
               <h5 className={styles.head}>Solutions</h5>
               <ul className="list-unstyled">
                 <li className='my-3'><Link href="/solution1" className={styles.link}>IT Management</Link></li>
