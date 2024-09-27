@@ -1,11 +1,20 @@
 'use client'
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import styles from '../../styles/Services/ServiceCard.module.css';
 import Link from 'next/link'; // Next.js Link for better navigation
 import Image from 'next/image'; // Importing Image from next/image
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ServiceCard = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    }, []);
+
     const services = [
         {
           id: 1,
@@ -55,8 +64,8 @@ const ServiceCard = () => {
     <section className={styles.serviceSection}>
       <Container>
         <Row>
-          {services.map((service) => (
-            <Col md={4} sm={12} key={service.id} className="mb-4">
+          {services.map((service, index) => (
+            <Col md={4} sm={12} key={service.id} className="mb-4" data-aos="fade-up" data-aos-delay={`${index * 100}`}>
               <Card className={styles.card}>
                 <Card.Body className={styles.cardBody + " text-center"}>
                   <Card.Title className={styles.cardTitle}>{service.title}</Card.Title>

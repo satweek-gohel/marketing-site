@@ -1,13 +1,22 @@
-'use client'
-import { useState } from 'react';
+'use client';
+import { useState, useEffect } from 'react';
 import { Container, Row, Col, Collapse, Button } from 'react-bootstrap';
 import { FaQuestionCircle } from 'react-icons/fa';
 import { BsChevronDown } from 'react-icons/bs';
 import Head from 'next/head';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import styles from '../styles/FaqSection.module.css';
 
 const FaqSection = () => {
   const [open, setOpen] = useState([false, false, false]);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   const faqs = [
     {
@@ -41,16 +50,16 @@ const FaqSection = () => {
         <Container>
           <Row>
             {/* Left side with heading and button */}
-            <Col md={5} className="text-md-start text-center mb-4">
+            <Col md={5} className="text-md-start text-center mb-4" data-aos="fade-right">
               <h5 className={styles.subTitle}>- FAQ</h5>
-              <h2 className={styles.mainTitle}>Most Common Questions <br></br>About Our Services</h2>
-              <Button variant="primary" className={styles.viewAllButton}>View All FAQs</Button>
+              <h2 className={styles.mainTitle}>Frequently Asked Questions</h2>
+              <Button variant="outline-primary" className={styles.viewAllButton}>View All</Button>
             </Col>
 
             {/* Right side with FAQ accordion */}
-            <Col md={7}>
+            <Col md={7} data-aos="fade-left">
               {faqs.map((faq, index) => (
-                <div key={index} className={styles.faqItem}>
+                <div key={index} className={styles.faqItem} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
                   <div
                     className={styles.faqHeader}
                     onClick={() => toggleFaq(index)}

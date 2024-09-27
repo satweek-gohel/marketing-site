@@ -38,12 +38,17 @@
   }
   
   @media (max-width: 768px) {
+    .banner {
+      height: 40vh; /* Decrease banner height on smaller screens */
+    }
+
     .title {
-      font-size: 32px;
+      font-size: 32px; /* Reduce font size on smaller screens */
     }
   
     .content {
       padding-left: 20px; /* Reduce padding on smaller screens */
+      justify-content: flex-center;
+      align-items: center; /* Adjust position on smaller screens */
     }
   }
-  

@@ -5,12 +5,12 @@
   text-decoration: none;
 }
 
-.menuLink:hover {
+.menuLink:hover,
+.menuLink:active {
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
   text-underline-offset: 10px;
 }
-
 /* Sidebar Toggle Button Styles */
 .sidebarToggle {
   border: none;
@@ -25,6 +25,13 @@
   padding: 10px;
   font-weight: 700;
 }
+
+.active {
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  text-underline-offset: 4px; /* Adjust for better visibility */
+}
+
 
 .sicon {
   font-size: 2rem;

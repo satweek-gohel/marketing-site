@@ -1,26 +1,30 @@
 'use client';
 
-import ScrollAnimation from 'react-animate-on-scroll';
 import { Container, Row, Col, Form, Button, Tab, Nav } from "react-bootstrap";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa"; // React Icons for address, email, phone
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import styles from '../../styles/Contact/ContactUs.module.css';
 
 export default function ContactUs() {
   const [activeKey, setActiveKey] = useState('address'); // State to manage active tab
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <section>
-      
-
       {/* Contact Form & Tabs */}
       <Container className="my-5">
         <Row>
           {/* Left Column - Form */}
-          <Col lg={6} className="mb-4">
-          
+          <Col lg={6} className="mb-4" data-aos="fade-right">
             <h2 className={styles.title}>Need Help ?</h2>
-          
             <p className={styles.subtitle}>Reach out to the world’s most reliable IT services.</p>
             <Form>
               <Form.Group className="mb-3" controlId="formName">
@@ -42,11 +46,10 @@ export default function ContactUs() {
               Book a Consultation
               </Button>
             </Form>
-
           </Col>
 
           {/* Right Column - Tabs */}
-          <Col lg={6}>
+          <Col lg={6} data-aos="fade-left">
             <Tab.Container activeKey={activeKey} onSelect={(k) => setActiveKey(k)}>
               <Nav variant="tabs" className={styles.customTabs}>
                 <Nav.Item>
@@ -61,26 +64,24 @@ export default function ContactUs() {
                 </Nav.Item>
               </Nav>
 
-             
-
               <Tab.Content className="mt-4">
                 {/* Address Tab Content */}
                 <Tab.Pane eventKey="address">
-                  <div className="d-flex align-items-center mb-5 mx-2 mt-5">
+                  <div className="d-flex align-items-center mb-5 mx-2 mt-5" data-aos="fade-up">
                     <FaMapMarkerAlt className={styles.icon} />
                     <div>
                     <h3 className={styles.tabcontitle}>Address:</h3>
                     <p className={styles.tabconsubtitle}>123 Main St, City, Country</p>
                     </div>
                   </div>
-                  <div className="d-flex align-items-center mb-5 mx-2">
+                  <div className="d-flex align-items-center mb-5 mx-2" data-aos="fade-up" data-aos-delay="100">
                     <FaEnvelope className={styles.icon} />
                     <div>
                     <h3 className={styles.tabcontitle}>Email:</h3>
                     <span className={styles.tabconsubtitle}>contact@company.com</span>
                     </div>
                   </div>
-                  <div className="d-flex align-items-center mb-5 mx-2">
+                  <div className="d-flex align-items-center mb-5 mx-2" data-aos="fade-up" data-aos-delay="200">
                     <FaPhoneAlt className={styles.icon} />
                     <div>
                     <h3 className={styles.tabcontitle}>Phone:</h3>
@@ -90,7 +91,7 @@ export default function ContactUs() {
                 </Tab.Pane>
 
                 {/* Google Maps Tab Content */}
-                <Tab.Pane eventKey="map">
+                <Tab.Pane eventKey="map" data-aos="fade-up">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.9226397029446!2d-122.41941608468115!3d37.77492927975986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085815c5f65b6e7%3A0xb0bffba4e0ec9e9f!2s123%20Main%20St%2C%20San%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1630894610090!5m2!1sen!2sus"
                     width="100%"

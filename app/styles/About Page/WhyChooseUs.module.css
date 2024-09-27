@@ -1,145 +1,150 @@
-/* WhyChooseUs.module.css */
-
 .whyChooseUs {
-    position: relative;
-    background-image: url('/about-banner.jpg'); /* Set your background image */
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 300px;
-    
-  }
+  position: relative;
+  background-image: url('/about-banner.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevent overflow */
+  margin-bottom: 0px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: white;
+  margin-top: 50px;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: white;
+  font-weight: 500;
+}
+
+.cardWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.customCard {
+  background-color: #fff;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  text-align: left;
+  padding: 30px;
+  height: 80%;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+.customCard:hover {
+  transform: translateY(-10px);
+}
+
+.phoneContainer, .solutionContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+.phoneIcon {
+  font-size: 60px;
+  color: white;
+  margin-right: 15px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.solutionIcon {
+  font-size: 100px;
+  color: var(--primary-color);
+  margin-right: 15px;
   
-  .overlay {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+}
+.startNow:hover {
+  text-decoration: underline var(--primary-color);
+  cursor: pointer;
+  text-underline-offset: 20px;
+
   
-  .title {
-    color: white;
-    font-size: 36px;
-    font-weight: bold;
+}
+
+.startNow{
+  margin-top: 15px;
+  margin-left: 55px;
+}
+
+.chead{
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .whyChooseUs {
+      height: auto;
+      margin-bottom: 00px;
   }
-  
-  .subtitle {
-    color: white;
-    margin-bottom: 30px; /* Reduced margin for better spacing */
-    font-size: 18px;
-  }
-  
-  /* Card Wrapper to position cards at the bottom border of the image */
   .cardWrapper {
-    position: absolute;
-    bottom: -200px; /* Adjust to place the cards on the border of the image */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%; /* Change width to prevent overflow */
-    max-width: 1200px; /* Optional max-width for larger screens */
-    display: flex;
-    justify-content: center;
-    padding-bottom: 20px;
-   
+      margin-bottom: px;
   }
-  
-  /* Custom Card Styling */
   .customCard {
-    background-color: #fff;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    text-align: left;
-    padding: 30px;
-    height: 300px;
+      height: auto;
   }
-  
-  .customCard:hover {
-    transform: translateY(-10px);
+  .title{
+    margin-top: 50px;
+    margin-bottom: 20px;
   }
-  
-  .phoneContainer {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .phoneIcon {
-    font-size: 50px;
-    color: #007bff; /* Bootstrap primary color */
-    margin-right: 10px;
-  }
-  
-  .phoneInfo span {
-    color: #666;
-    text-align: left !important; /* Secondary text color */
-  }
-  
-  .solutionContainer {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .solutionIcon {
-    font-size: 24px;
-    color: #007bff; /* Bootstrap primary color */
-    margin-right: 10px;
-  }
-  
-  .solutionText {
-    text-align: left; /* Align text to the left */
-  }
-  
-  .startNow {
-    margin-top: 20px;
-  }
-  
-  .startNow h5 {
-    font-weight: bold;
-    color: #333; /* Card title color */
-  }
-  
-  .startNow p {
-    color: #666; /* Description color */
-  }
- 
+}
 
-  @media (min-width: 768px) and (max-width: 991px) { /* Tablet and medium screens */
-    .cardWrapper {
-        top: 80%;
-        margin-bottom: 200px;
-     
-    }
+@media (max-width: 767px) {
 
+  .title{
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  .whyChooseUs {
+      margin-bottom: 00px;
+  }
+  .cardWrapper {
+      padding-bottom: 80px;
+  }
+  .phoneIcon{
+      font-size: 30px;
+  }
+  .customCard{
+    padding: 20;
+  }
+  .solutionIcon{
+    font-size: 200px;
+  }
+  .chead {
+      font-size: 1rem;
+  }
+  .cdes {
+      font-size: 0.85rem;
     
   }
 
-  @media (max-width: 767px) { /* Mobile and smaller screens */
-    .cardWrapper {
-        top:80%    
-    }
-
-    .chead{
-        font-size: 1rem !important;
-    }
-
-    .cdes{
-        font-size: 0.8rem !important;
-    }
-
-    .whyChooseUs{
-        margin-bottom: 500px;
-    }
-    .phoneIcon{
-        font-size: 30px;
-    }
+  .startNow{
+    margin-left: 60px;
   }
+}

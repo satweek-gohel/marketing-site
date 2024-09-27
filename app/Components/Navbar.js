@@ -1,17 +1,27 @@
 'use client'; // Ensures this is a Client Component
 
 import { Container, Row, Col, Navbar, Nav, Button, Offcanvas } from "react-bootstrap";
-import { FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaClock, FaYoutube } from "react-icons/fa"; // Social Icons
+import { MapPinIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid"; // Heroicons v2
+import { FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaClock, FaYoutube } from "react-icons/fa"; // Social Icons and Clock Icon
 import { FaEnvelope } from "react-icons/fa"; // Importing email icon from react-icons
 import Image from 'next/image';
 import styles from '../styles/Navbar.module.css'; // Custom CSS for primary/secondary colors
 import { HiMenu } from 'react-icons/hi'; // Example using a different icon library
-import { useState } from 'react'; // To manage the sidebar state
+import { useState, useEffect } from 'react'; // To manage the sidebar state
 import { MdMenuOpen } from "react-icons/md";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'; // Importing useRouter
 
 export default function CustomNavbar() {
   const [showSidebar, setShowSidebar] = useState(false); // State for sidebar visibility
+  const [currentPath, setCurrentPath] = useState(''); // To store the current path
+  const router = useRouter(); // Use useRouter inside the component body
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentPath(router.pathname); // Store the current path
+    }
+  }, [router.pathname]); // Dependency array includes router.pathname to ensure it updates on route change
 
   const handleSidebarClose = () => setShowSidebar(false);
   const handleSidebarShow = () => setShowSidebar(true);
@@ -37,22 +47,37 @@ export default function CustomNavbar() {
             <HiMenu style={{ fontSize: '1.5rem', color: '#0d6efd' }} />
           </Navbar.Toggle>
 
-          {/* Sidebar Toggle Button on Mobile/Tablet */}
-          <Button variant="outline" className={`d-lg-none ${styles.sidebarToggle}`} onClick={handleSidebarShow}>
-            <MdMenuOpen size={25} color="var(--text-color)" />
-          </Button>
-
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className={`mx-auto ${styles.menu}`} id="menu">
-              <Nav.Link href="/" className={styles.menuLink}>Home</Nav.Link>
-              <Nav.Link href="/about" className={styles.menuLink}>About</Nav.Link>
-              <Nav.Link href="/services" className={styles.menuLink}>Services</Nav.Link>
-              <Nav.Link href="/contact" className={styles.menuLink}>Contact</Nav.Link>
+              <Nav.Link 
+                href="/" 
+                className={`${styles.menuLink} ${currentPath === '/' ? styles.active : ''}`}
+              >
+                Home
+              </Nav.Link>
+              <Nav.Link 
+                href="/about" 
+                className={`${styles.menuLink} ${currentPath === '/about' ? styles.active : ''}`}
+              >
+                About
+              </Nav.Link>
+              <Nav.Link 
+                href="/services" 
+                className={`${styles.menuLink} ${currentPath === '/services' ? styles.active : ''}`}
+              >
+                Services
+              </Nav.Link>
+              <Nav.Link 
+                href="/contact" 
+                className={`${styles.menuLink} ${currentPath === '/contact' ? styles.active : ''}`}
+              >
+                Contact
+              </Nav.Link>
             </Nav>
-
-            {/* Sidebar Toggle Button on Larger Screens */}
-            <Button variant="outline" className="d-none d-lg-block" onClick={handleSidebarShow}>
-              <MdMenuOpen size={25} color="var(--text-color)" />
+           
+            {/* Sidebar Toggle Button */}
+            <Button variant="outline" onClick={handleSidebarShow}>
+              <MdMenuOpen color="var(--text-color)" size={25} />
             </Button>
           </Navbar.Collapse>
         </Container>
@@ -64,7 +89,6 @@ export default function CustomNavbar() {
           <Offcanvas.Title>Tanda</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {/* Sidebar Content */}
           <h4 className={styles.stitle}>Contact Info</h4>
           <div className={styles.infobox}>
             <div className={styles.left}>
@@ -97,26 +121,34 @@ export default function CustomNavbar() {
           </div>
 
           <h4 className={styles.stitle} style={{ marginTop: '20px' }}>Additional Links</h4>
-          <ul className={styles.menu2}>
-            <li><Link href="/about" className={styles.menuLink}>About</Link></li>
-            <li><Link href="/project" className={styles.menuLink}>Project</Link></li>
-            <li><Link href="/login" className={styles.menuLink}>Login</Link></li>
-            <li><Link href="/register" className={styles.menuLink}>Register</Link></li>
+          <ul className={styles.menu2} style={{ padding: '0px', marginTop: '20px' }}>
+            <li>
+              <Link href="/about" className={styles.menuLink} style={{ marginLeft: '0px !important' }}>About</Link>
+            </li>
+            <li>
+              <Link href="/project" className={styles.menuLink}>Project</Link>
+            </li>
+            <li>
+              <Link href="/login" className={styles.menuLink}>Login</Link>
+            </li>
+            <li>
+              <Link href="/register" className={styles.menuLink}>Register</Link>
+            </li>
           </ul>
 
           <h4 className={styles.stitle} style={{ marginTop: '20px' }}>Connect With Us</h4>
-          <div className="d-flex my-4">
+          <div className="d-flex my-5 ">
             <Link href="https://www.facebook.com" passHref>
-              <FaFacebook className={styles.socialIcon} />
+              <FaFacebook style={{ color: '#3b5998', marginRight: '25px', marginLeft: '20px', fontSize: '2rem' }} />
             </Link>
             <Link href="https://www.twitter.com" passHref>
-              <FaTwitter className={styles.socialIcon} />
+              <FaTwitter style={{ color: '#1DA1F2', marginRight: '25px', fontSize: '2rem' }} />
             </Link>
             <Link href="https://www.instagram.com" passHref>
-              <FaInstagram className={styles.socialIcon} />
+              <FaInstagram style={{ color: '#C13584', marginRight: '25px', fontSize: '2rem' }} />
             </Link>
             <Link href="https://www.youtube.com" passHref>
-              <FaYoutube className={styles.socialIcon} />
+              <FaYoutube style={{ color: '#FF0000', marginRight: '10px', fontSize: '2rem' }} />
             </Link>
           </div>
         </Offcanvas.Body>

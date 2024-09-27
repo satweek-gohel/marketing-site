@@ -43,7 +43,7 @@ const CaseStudies = () => {
           }
           return newCounters;
         });
-      }, 50);
+      }, 200);
     });
   }, []);
 
