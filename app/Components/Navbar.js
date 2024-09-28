@@ -75,8 +75,6 @@ export default function CustomNavbar() {
               </Nav.Link>
             </Nav>
            
-            {/* Sidebar Toggle Button */}
-           
           </Navbar.Collapse>
 
           <Button variant="outline" onClick={handleSidebarShow}>
