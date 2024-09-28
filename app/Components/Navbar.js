@@ -1,9 +1,8 @@
 'use client'; // Ensures this is a Client Component
 
-import { Container, Row, Col, Navbar, Nav, Button, Offcanvas } from "react-bootstrap";
+import { Container, Row, Col, Navbar, Nav, Button, Offcanvas, NavDropdown } from "react-bootstrap";
 import { MapPinIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid"; // Heroicons v2
-import { FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaClock, FaYoutube } from "react-icons/fa"; // Social Icons and Clock Icon
-import { FaEnvelope } from "react-icons/fa"; // Importing email icon from react-icons
+import { FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaClock, FaYoutube, FaEnvelope } from "react-icons/fa"; // Social Icons and Clock Icon
 import Image from 'next/image';
 import styles from '../styles/Navbar.module.css'; // Custom CSS for primary/secondary colors
 import { HiMenu } from 'react-icons/hi'; // Example using a different icon library
@@ -27,10 +26,10 @@ export default function CustomNavbar() {
   const handleSidebarShow = () => setShowSidebar(true);
 
   return (
-    <header>
+    <header style={{zIndex:'999 !important'}}>
       {/* Main Navbar */}
-      <Navbar bg="white" expand="lg" className="border-bottom">
-        <Container>
+      <Navbar bg="white" expand="lg" className="border-bottom" style={{zIndex:'999 !important'}}>
+        <Container style={{zIndex:'999 !important'}}y>
           <Navbar.Brand href="/">
             <Image 
               src="/logo.png" 
@@ -73,13 +72,27 @@ export default function CustomNavbar() {
               >
                 Contact
               </Nav.Link>
+
+              {/* Dropdown for Products */}
+              <NavDropdown 
+                title="Products" 
+                id="productsDropdown" 
+                className={styles.menuLink}
+                style={{zIndex:'999 !important'}}
+              >
+                <NavDropdown.Item style={{zIndex:'999 !important'}}  as={Link} href="/products/web-development">Web Development</NavDropdown.Item>
+                <NavDropdown.Item style={{zIndex:'999 !important'}} as={Link} href="/products/mobile-app-development">App Development</NavDropdown.Item>
+                <NavDropdown.Item style={{zIndex:'999 !important'}} as={Link} href="/products/seo-services">SEO Services</NavDropdown.Item>
+                <NavDropdown.Item style={{zIndex:'999 !important'}} as={Link} href="/products/graphic-design">Graphic Design</NavDropdown.Item>
+                <NavDropdown.Item style={{zIndex:'999 !important'}} as={Link} href="/products/content-writing">Content Writing</NavDropdown.Item>
+                <NavDropdown.Item style={{zIndex:'999 !important'}} as={Link} href="/products/digital-marketing">Digital Marketing</NavDropdown.Item>
+              </NavDropdown>
             </Nav>
-           
           </Navbar.Collapse>
 
           <Button variant="outline" onClick={handleSidebarShow}>
               <MdMenuOpen color="var(--text-color)" size={25} />
-            </Button>
+          </Button>
         </Container>
       </Navbar>
 

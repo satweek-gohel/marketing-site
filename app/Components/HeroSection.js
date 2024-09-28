@@ -16,10 +16,10 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className={styles.heroSection}>
+    <section className={styles.heroSection} style={{zIndex:1}}>
       <Container>
-        <Row className="align-items-center">
-          <Col md={6}  className="text-md-start text-center" data-aos="fade-right">
+        <Row className="align-items-center" style={{zIndex:1}}>
+          <Col md={6}  className="text-md-start text-center" data-aos="fade-right" style={{zIndex:1}}>
             <h1 className={styles.title}>Optimize IT Systems</h1>
             <h2 className={styles.heading}>Creating a better</h2>
             <h2 className={styles.heading2}>IT Solutions</h2>
@@ -30,7 +30,7 @@ const HeroSection = () => {
               Start Now 
             </Button>
           </Col>
-          <Col md={6} className="text-center" data-aos="fade-left">
+          <Col md={6} className="text-center" data-aos="fade-left" style={{zIndex:1}}>
             <Image
               src="/hero-banner.png" 
               alt="Hero Image"
@@ -38,6 +38,7 @@ const HeroSection = () => {
               height={500}
               className={styles.heroImage}
               priority={true} // Optimize image loading
+              style={{ zIndex: 1 }} // Reduced z-index of the image
             />
           </Col>
         </Row>

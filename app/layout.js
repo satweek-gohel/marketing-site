@@ -13,7 +13,9 @@ export default function RootLayout({children}) {
   return (
     <html lang="en">
       <body>
-        <CustomNavbar />
+        <div style={{ zIndex: 999, position: 'relative' }}>
+          <CustomNavbar />
+        </div>
         {children}
         <Footer />
       </body>
