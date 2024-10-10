@@ -25,10 +25,13 @@ const ConsultationSection = () => {
           {/* Left Side */}
           <Col md={6} className="text-md-start text-center" data-aos="fade-up">
             <h2 className={styles.heading1}>― Works About</h2>
-            <h2 className={styles.heading2}>Trusted by 5,000+<br></br>
+            <h2 className={styles.heading2}>Solutions for better business<br></br>
             Happy Customers</h2>
             <p className={styles.description}>
-            Jennings appetite disposed me an at subjects an. To no indulgence diminution so discovered mr apartments. Are off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now how nay cold real case.
+            We use data, technology, and AI to shape the future
+Ready for meaningful
+change?
+
             </p>
             <div className={styles.pointContainer}>
               <div className={styles.point}>

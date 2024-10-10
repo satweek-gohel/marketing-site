@@ -25,20 +25,25 @@ export default function ContactUs() {
           {/* Left Column - Form */}
           <Col lg={6} className="mb-4" data-aos="fade-right">
             <h2 className={styles.title}>Need Help ?</h2>
-            <p className={styles.subtitle}>Reach out to the world’s most reliable IT services.</p>
-            <Form>
-              <Form.Group className="mb-3" controlId="formName">
-                <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter your name" />
+            <p className={styles.subtitle}>Talk to us about how to improve your customer service, optimise your resources and use technology to deliver innovative solutions. Helping clients all across the World.</p>
+            <Form className="mt-3">
+              <Form.Group className="mb-3" controlId="formFName">
+                <Form.Label className={styles.formLabel}>First Name:</Form.Label>
+                <Form.Control type="text" placeholder="Enter your first Name name" />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formLName">
+                <Form.Label className={styles.formLabel}>Last Name:</Form.Label>
+                <Form.Control type="text" placeholder="Enter your last name" />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formEmail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label className={styles.formLabel}>Email address:</Form.Label>
                 <Form.Control type="email" placeholder="Enter your email" />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formMessage">
-                <Form.Label>Message</Form.Label>
+                <Form.Label className={styles.formLabel}>Message:</Form.Label>
                 <Form.Control as="textarea" rows={3} placeholder="Your message" />
               </Form.Group>
 

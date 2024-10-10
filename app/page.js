@@ -16,8 +16,8 @@ export default function Home() {
     <ConsultationSection /> 
     <CaseStudies />
    <OurTeam />
-   <FaqSection />
-   <PopularNews /> 
+   {/* <FaqSection />
+   <PopularNews />  */}
    </>
 
   );

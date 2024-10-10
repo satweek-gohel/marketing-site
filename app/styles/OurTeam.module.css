@@ -1,6 +1,7 @@
 .teamSection {
-  padding: 80px 20px;
+  padding: 30px 20px;
   background-color: white;
+  margin-bottom: 50px;
 }
 
 .headingContainer {
@@ -26,6 +27,8 @@
 
 .teamMemberCol {
   margin-bottom: 30px;
+    padding: 0 15px; /* Add padding on left and right */
+
 }
 
 .role {

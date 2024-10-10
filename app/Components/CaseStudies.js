@@ -15,10 +15,10 @@ const carouselImages = [
 ];
 
 const statsData = [
-  { id:1,label: "Happy Clients", value: 687 },
-  { id:2,label: "Finished Projects", value: 2348 },
-  { id:3,label: "Skilled Experts", value: 450 },
-  { id:4,label: "Media Posts", value: 1200 }
+  { id:1,label: "Happy Clients", value: 92 },
+  { id:2,label: "Finished Projects", value: 1200 },
+  { id:3,label: "Skilled Experts", value: 55 },
+  // { id:4,label: "Media Posts", value: 1200 }
 ];
 
 const CaseStudies = () => {
@@ -68,7 +68,7 @@ const CaseStudies = () => {
   return (
     <section className={styles.caseStudiesSection}>
       <Container>
-        <Row>
+        {/* <Row>
           <Col>
             <div className={styles.headingContainer} data-aos="fade-up">
               <h3 className={styles.heading}>CASE STUDIES</h3>
@@ -78,7 +78,7 @@ const CaseStudies = () => {
           </Col>
         </Row>
 
-        {/* Carousel */}
+      
         <Row>
           <Col>
             <Slider {...settings} className={styles.carousel}>
@@ -95,12 +95,12 @@ const CaseStudies = () => {
               ))}
             </Slider>
           </Col>
-        </Row>
+        </Row> */}
 
         {/* Stats Section */}
         <Row className={styles.statsRow}>
           {statsData.map((stat, index) => (
-            <Col xs={6} md={3} key={stat.id} className={styles.statsCol} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
+            <Col xs={3} md={4} key={stat.id} className={styles.statsCol} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
               <h3 className={styles.statValue}>{counters[index]}</h3>
               <p className={styles.statLabel}>{stat.label}</p>
             </Col>

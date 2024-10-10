@@ -53,6 +53,8 @@
 
 .description2 {
     color: var(--text-color) !important; /* Description color */
+    line-height: 2.2rem;
+    margin-bottom: 50px;
 }
 .iconItem{
     display: flex;

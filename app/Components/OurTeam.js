@@ -1,16 +1,19 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { FaFacebook, FaTwitter, FaLinkedin, FaUser } from 'react-icons/fa';
-import styles from '../styles/OurTeam.module.css';
+import Slider from 'react-slick';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import styles from '../styles/OurTeam.module.css';
 
 const teamMembers = [
   {
     id: 1,
-    name: 'John Doe',
-    role: 'Lead Developer',
+    name: 'Rishit Dubey',
+    role: 'CEO/Co-Founder',
     imageUrl: '/team1.jpg',
     socials: {
       facebook: 'https://facebook.com/johndoe',
@@ -20,7 +23,7 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: 'Jane Smith',
+    name: 'Shraddha Mishra',
     role: 'Project Manager',
     imageUrl: '/team2.jpg',
     socials: {
@@ -31,13 +34,46 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: 'Emily White',
-    role: 'UI/UX Designer',
+    name: 'Suchita Dubey',
+    role: 'Director',
     imageUrl: '/team3.jpg',
     socials: {
       facebook: 'https://facebook.com/emilywhite',
       twitter: 'https://twitter.com/emilywhite',
       linkedin: 'https://linkedin.com/in/emilywhite',
+    },
+  },
+  {
+    id: 4,
+    name: 'Manuraj Dubey',
+    role: 'Director',
+    imageUrl: '/team3.jpg',
+    socials: {
+      facebook: 'https://facebook.com/emilywhite',
+      twitter: 'https://twitter.com/emilywhite',
+      linkedin: 'https://linkedin.com/in/emilywhite',
+    },
+  },
+  {
+    id: 5,
+    name: 'Nilesh Solanki',
+    role: 'CIO',
+    imageUrl: '/team1.jpg',
+    socials: {
+      facebook: 'https://facebook.com/johndoe',
+      twitter: 'https://twitter.com/johndoe',
+      linkedin: 'https://linkedin.com/in/johndoe',
+    },
+  },
+  {
+    id: 6,
+    name: 'Charisma Megayana',
+    role: 'Head of Marketing',
+    imageUrl: '/team2.jpg',
+    socials: {
+      facebook: 'https://facebook.com/johndoe',
+      twitter: 'https://twitter.com/johndoe',
+      linkedin: 'https://linkedin.com/in/johndoe',
     },
   },
 ];
@@ -54,7 +90,37 @@ const OurTeam = () => {
   }, []);
 
   const handleIconClick = (index) => {
-    setActiveMember(index === activeMember ? null : index); // Toggle logic
+    setActiveMember(index === activeMember ? null : index);
+  };
+
+  // Slick carousel settings
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // Show 3 members at a time
+    slidesToScroll: 1,
+    autoplay:true,
+    autoplaySpeed: 3000,        // Time between slides (in milliseconds)
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -66,24 +132,15 @@ const OurTeam = () => {
           <div className={styles.line}></div>
         </div>
 
-        <Row className="justify-content-center">
+        <Slider {...sliderSettings}>
           {teamMembers.map((member, index) => (
-            <Col xs={12} sm={6} md={4} key={member.id} className={styles.teamMemberCol} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
-              <div className={styles.teamMember}>
+            <div key={member.id} className={styles.teamMemberCol}>
+              <div className={styles.teamMember} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
                 <div className={styles.imageWrapper}>
-                  <img
-                    src={member.imageUrl}
-                    alt={member.name}
-                    className={styles.teamImage}
-                  />
+                  <img src={member.imageUrl} alt={member.name} className={styles.teamImage} />
                   <div className={styles.iconContainer}>
-                    <FaUser
-                      className={styles.userIcon}
-                      onClick={() => handleIconClick(index)}
-                    />
-                    <div
-                      className={`${styles.socialIcons} ${activeMember === index ? styles.visible : ''}`}
-                    >
+                    <FaUser className={styles.userIcon} onClick={() => handleIconClick(index)} />
+                    <div className={`${styles.socialIcons} ${activeMember === index ? styles.visible : ''}`}>
                       <a href={member.socials.facebook} target="_blank" rel="noreferrer">
                         <FaFacebook style={{ color: '#3b5998', backgroundColor: 'white', borderRadius: '50%', padding: '5px' }} />
                       </a>
@@ -101,9 +158,9 @@ const OurTeam = () => {
                   <p className={styles.role}>{member.role}</p>
                 </div>
               </div>
-            </Col>
+            </div>
           ))}
-        </Row>
+        </Slider>
       </Container>
     </section>
   );
