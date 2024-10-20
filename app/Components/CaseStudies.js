@@ -100,7 +100,7 @@ const CaseStudies = () => {
         {/* Stats Section */}
         <Row className={styles.statsRow}>
           {statsData.map((stat, index) => (
-            <Col xs={3} md={4} key={stat.id} className={styles.statsCol} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
+            <Col xs={4} md={4} key={stat.id} className={styles.statsCol} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
               <h3 className={styles.statValue}>{counters[index]}</h3>
               <p className={styles.statLabel}>{stat.label}</p>
             </Col>

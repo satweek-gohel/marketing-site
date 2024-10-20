@@ -54,7 +54,7 @@ export default function ContactUs() {
           </Col>
 
           {/* Right Column - Tabs */}
-          <Col lg={6} data-aos="fade-left">
+          <Col lg={6} data-aos="fade-up">
             <Tab.Container activeKey={activeKey} onSelect={(k) => setActiveKey(k)}>
               <Nav variant="tabs" className={styles.customTabs}>
                 <Nav.Item>
@@ -62,11 +62,11 @@ export default function ContactUs() {
                     Address
                   </Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
+                {/* <Nav.Item>
                   <Nav.Link eventKey="map" className={activeKey === 'map' ? styles.activeTab : ''} style={{color:'var(--text-color)'}}>
                     Google Maps
                   </Nav.Link>
-                </Nav.Item>
+                </Nav.Item> */}
               </Nav>
 
               <Tab.Content className="mt-4">
@@ -75,28 +75,30 @@ export default function ContactUs() {
                   <div className="d-flex align-items-center mb-5 mx-2 mt-5" data-aos="fade-up">
                     <FaMapMarkerAlt className={styles.icon} />
                     <div>
-                    <h3 className={styles.tabcontitle}>Address:</h3>
-                    <p className={styles.tabconsubtitle}>123 Main St, City, Country</p>
+                    <h3 className={styles.tabcontitle}>Locations</h3>
+                    <p className={styles.tabconsubtitle}>Australia | Indonesia| Mumbai| Gujarat | Madhya Pradesh</p>
                     </div>
                   </div>
                   <div className="d-flex align-items-center mb-5 mx-2" data-aos="fade-up" data-aos-delay="100">
                     <FaEnvelope className={styles.icon} />
                     <div>
                     <h3 className={styles.tabcontitle}>Email:</h3>
-                    <span className={styles.tabconsubtitle}>contact@company.com</span>
+                    <span className={styles.tabconsubtitle}><a href="mailto:sales@cuentista.tech" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'inherit' }}>
+    sales@cuentista.tech
+  </a></span>
                     </div>
                   </div>
                   <div className="d-flex align-items-center mb-5 mx-2" data-aos="fade-up" data-aos-delay="200">
                     <FaPhoneAlt className={styles.icon} />
                     <div>
                     <h3 className={styles.tabcontitle}>Phone:</h3>
-                    <span className={styles.tabconsubtitle}>+1 234 567 890</span>
+                    <span className={styles.tabconsubtitle}>+91 97139 00913</span>
                     </div>
                   </div>
                 </Tab.Pane>
 
                 {/* Google Maps Tab Content */}
-                <Tab.Pane eventKey="map" data-aos="fade-up">
+                {/* <Tab.Pane eventKey="map" data-aos="fade-up">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.9226397029446!2d-122.41941608468115!3d37.77492927975986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085815c5f65b6e7%3A0xb0bffba4e0ec9e9f!2s123%20Main%20St%2C%20San%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1630894610090!5m2!1sen!2sus"
                     width="100%"
@@ -106,7 +108,7 @@ export default function ContactUs() {
                     loading="lazy"
                     title="map"
                   ></iframe>
-                </Tab.Pane>
+                </Tab.Pane> */}
               </Tab.Content>
             </Tab.Container>
           </Col>

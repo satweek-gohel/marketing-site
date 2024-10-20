@@ -14,66 +14,66 @@ const teamMembers = [
     id: 1,
     name: 'Rishit Dubey',
     role: 'CEO/Co-Founder',
-    imageUrl: '/team1.jpg',
+    imageUrl: 'https://t4.ftcdn.net/jpg/02/44/43/69/360_F_244436923_vkMe10KKKiw5bjhZeRDT05moxWcPpdmb.jpg',
     socials: {
-      facebook: 'https://facebook.com/johndoe',
-      twitter: 'https://twitter.com/johndoe',
-      linkedin: 'https://linkedin.com/in/johndoe',
+      facebook: '#',
+      twitter: '#',
+      linkedin: '#',
     },
   },
   {
     id: 2,
     name: 'Shraddha Mishra',
     role: 'Project Manager',
-    imageUrl: '/team2.jpg',
+    imageUrl: 'https://www.shutterstock.com/image-vector/person-gray-photo-placeholder-woman-600nw-1241538838.jpg',
     socials: {
-      facebook: 'https://facebook.com/janesmith',
-      twitter: 'https://twitter.com/janesmith',
-      linkedin: 'https://linkedin.com/in/janesmith',
+      facebook: '#',
+      twitter: '#',
+      linkedin: '#',
     },
   },
   {
     id: 3,
     name: 'Suchita Dubey',
     role: 'Director',
-    imageUrl: '/team3.jpg',
+    imageUrl: 'https://www.shutterstock.com/image-vector/person-gray-photo-placeholder-woman-600nw-1241538838.jpg',
     socials: {
-      facebook: 'https://facebook.com/emilywhite',
-      twitter: 'https://twitter.com/emilywhite',
-      linkedin: 'https://linkedin.com/in/emilywhite',
+      facebook: '#',
+      twitter: '#',
+      linkedin: '#',
     },
   },
   {
     id: 4,
     name: 'Manuraj Dubey',
     role: 'Director',
-    imageUrl: '/team3.jpg',
+    imageUrl: 'https://t4.ftcdn.net/jpg/02/44/43/69/360_F_244436923_vkMe10KKKiw5bjhZeRDT05moxWcPpdmb.jpg',
     socials: {
-      facebook: 'https://facebook.com/emilywhite',
-      twitter: 'https://twitter.com/emilywhite',
-      linkedin: 'https://linkedin.com/in/emilywhite',
+      facebook: '#',
+      twitter: '#',
+      linkedin: '#',
     },
   },
   {
     id: 5,
     name: 'Nilesh Solanki',
     role: 'CIO',
-    imageUrl: '/team1.jpg',
+    imageUrl: 'https://t4.ftcdn.net/jpg/02/44/43/69/360_F_244436923_vkMe10KKKiw5bjhZeRDT05moxWcPpdmb.jpg',
     socials: {
-      facebook: 'https://facebook.com/johndoe',
-      twitter: 'https://twitter.com/johndoe',
-      linkedin: 'https://linkedin.com/in/johndoe',
+      facebook: '#',
+      twitter: '#',
+      linkedin: '#',
     },
   },
   {
     id: 6,
     name: 'Charisma Megayana',
     role: 'Head of Marketing',
-    imageUrl: '/team2.jpg',
+    imageUrl: 'https://www.shutterstock.com/image-vector/person-gray-photo-placeholder-woman-600nw-1241538838.jpg',
     socials: {
-      facebook: 'https://facebook.com/johndoe',
-      twitter: 'https://twitter.com/johndoe',
-      linkedin: 'https://linkedin.com/in/johndoe',
+      facebook: '#',
+      twitter: '#',
+      linkedin: '#',
     },
   },
 ];
@@ -138,7 +138,7 @@ const OurTeam = () => {
               <div className={styles.teamMember} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
                 <div className={styles.imageWrapper}>
                   <img src={member.imageUrl} alt={member.name} className={styles.teamImage} />
-                  <div className={styles.iconContainer}>
+                  {/* <div className={styles.iconContainer}>
                     <FaUser className={styles.userIcon} onClick={() => handleIconClick(index)} />
                     <div className={`${styles.socialIcons} ${activeMember === index ? styles.visible : ''}`}>
                       <a href={member.socials.facebook} target="_blank" rel="noreferrer">
@@ -151,7 +151,7 @@ const OurTeam = () => {
                         <FaLinkedin style={{ color: '#0077b5', backgroundColor: 'white', borderRadius: '50%', padding: '5px' }} />
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className={styles.memberInfo}>
                   <h3>{member.name}</h3>

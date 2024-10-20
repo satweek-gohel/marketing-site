@@ -27,7 +27,7 @@ const ProcessComponent = () => {
       <Container>
         {/* Title and Subtitle */}
         <div className="text-center mb-5 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up">
-          <h2 className={styles.title}>Process</h2>
+          <h2 className={styles.title}>Our Commitment</h2>
           <p className={styles.subtitle}>How we work</p>
           <div className={styles.line}></div>
         </div>

@@ -29,7 +29,7 @@ const Process = () => {
       id: 1,
       icon: <FaLaptopCode className={styles.icon1} />,
       title: "AI Development & Consulting",
-      description: "Astonished set expression solicitude way admiration",
+      description: "Leverage our expertise to develop and integrate cutting-edge AI solutions tailored to your business needs.",
     },
     {
       id: 2,
@@ -50,35 +50,35 @@ const Process = () => {
       description: "Our team will help you streamline project management, ensuring your projects are delivered on time and within budget.",
     },
     {
-    id: 5,
-    icon: <FaLaptopCode className={styles.icon1} />,
-    title: "Microsoft Technology",
-    description: "We offer comprehensive Microsoft technology services, helping you maximize the potential of Microsoft tools for your business.",
-  },
-  {
-    id: 6,
-    icon: <MdOutlineSecurity className={styles.icon2} />,
-    title: "Smart Data Solutions",
-    description: "Our experts will transform your data into actionable insights, driving smarter business decisions.",
-  },
-  {
-    id: 7,
-    icon: <IoIosCloudUpload className={styles.icon3} />,
-    title: "Software Development",
-    description: "We develop custom software solutions that meet your business’s unique needs, from concept to deployment.",
-  },
-  {
-    id: 8,
-    icon: <LuDatabaseBackup className={styles.icon4} />,
-    title: "Web Development",
-    description: "Our web development experts will help you build feature-rich, responsive websites tailored to your business needs.",
-  },
-  {
-    id: 9,
-    icon: <IoIosCloudUpload className={styles.icon3} />,
-    title: "Training & Digital Literacy",
-    description: "We provide tailored training programs to upskill your workforce in various digital tools and platforms.",
-  }
+      id: 5,
+      icon: <FaLaptopCode className={styles.icon1} />,
+      title: "Microsoft Technology",
+      description: "We offer comprehensive Microsoft technology services, helping you maximize the potential of Microsoft tools for your business.",
+    },
+    {
+      id: 6,
+      icon: <MdOutlineSecurity className={styles.icon2} />,
+      title: "Smart Data Solutions",
+      description: "Our experts will transform your data into actionable insights, driving smarter business decisions.",
+    },
+    {
+      id: 7,
+      icon: <IoIosCloudUpload className={styles.icon3} />,
+      title: "Software Development",
+      description: "We develop custom software solutions that meet your business’s unique needs, from concept to deployment.",
+    },
+    {
+      id: 8,
+      icon: <LuDatabaseBackup className={styles.icon4} />,
+      title: "Web Development",
+      description: "Our web development experts will help you build feature-rich, responsive websites tailored to your business needs.",
+    },
+    {
+      id: 9,
+      icon: <IoIosCloudUpload className={styles.icon3} />,
+      title: "Training & Digital Literacy",
+      description: "We provide tailored training programs to upskill your workforce in various digital tools and platforms.",
+    }
   ];
 
   // Slick settings for carousel
@@ -99,7 +99,7 @@ const Process = () => {
         },
       },
       {
-        breakpoint: 600, // mobile devices
+        breakpoint: 768, // mobile devices
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

@@ -5,6 +5,12 @@
   text-decoration: none;
 }
 
+.menuLink2 {
+  color: black;
+  font-size: 18px;
+  margin: 0 20px;
+  text-decoration: none;
+}
 .menuLink:hover,
 .menuLink:active {
   text-decoration: underline;
@@ -100,5 +106,8 @@
 
   .sidebarToggle {
     margin-left: 15px;
+  }
+  .sidebarButton {
+    display: none;
   }
 }

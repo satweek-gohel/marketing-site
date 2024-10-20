@@ -19,7 +19,7 @@ export default function CustomNavbar() {
     if (typeof window !== 'undefined') {
       setCurrentPath(router.pathname); // Store the current path
     }
-  }, [router.pathname]); // Dependency array includes router.pathname to ensure it updates on route change
+  }, [router.pathname]); 
 
   const handleSidebarClose = () => setShowSidebar(false);
   const handleSidebarShow = () => setShowSidebar(true);
@@ -31,7 +31,7 @@ export default function CustomNavbar() {
         <Container style={{ zIndex: '999 !important' }}>
           <Navbar.Brand href="/">
             <Image 
-              src="/logo.png" 
+              src="/logo.jpeg" 
               alt="Logo" 
               width={120} 
               height={60} 
@@ -67,31 +67,34 @@ export default function CustomNavbar() {
               >
                 Services
               </Nav.Link>
+             
+
+              {/* Dropdown for Products */}
+              
+              <NavDropdown 
+                title="Products" 
+                id="productsDropdown" 
+                className={styles.menuLink2}
+                style={{ zIndex: '999 !important' }}
+              >
+                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/dynamics-365">Dynamic 365</NavDropdown.Item>
+                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/microsoft-office-365">Office 365</NavDropdown.Item>
+                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/microsoft-power-platform">Power Platofrm</NavDropdown.Item>
+                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/microsoft-sustainability-manager">Sustainability Manager</NavDropdown.Item>
+               
+              </NavDropdown>
+              
               <Nav.Link 
                 href="/contact" 
                 className={`${styles.menuLink} ${currentPath === '/contact' ? styles.active : ''}`}
               >
                 Contact
               </Nav.Link>
-
-              {/* Dropdown for Products */}
-              <NavDropdown 
-                title="Products" 
-                id="productsDropdown" 
-                className={styles.menuLink}
-                style={{ zIndex: '999 !important' }}
-              >
-                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/web-development">Web Development</NavDropdown.Item>
-                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/mobile-app-development">App Development</NavDropdown.Item>
-                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/seo-services">SEO Services</NavDropdown.Item>
-                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/graphic-design">Graphic Design</NavDropdown.Item>
-                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/content-writing">Content Writing</NavDropdown.Item>
-                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/digital-marketing">Digital Marketing</NavDropdown.Item>
-              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
+          
 
-          <Button variant="outline" onClick={handleSidebarShow} >
+          <Button variant="outline" onClick={handleSidebarShow}  className={styles.sidebarButton} >
         <MdMenuOpen color="var(--text-color)" size={25} />
       </Button>
         </Container>
@@ -104,29 +107,37 @@ export default function CustomNavbar() {
       {/* Sidebar */}
       <Offcanvas show={showSidebar} onHide={handleSidebarClose} placement="end">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Tanda</Offcanvas.Title>
+          <Offcanvas.Title>Cuentista</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <h4 className={styles.stitle}>Contact Info</h4>
           <div className={styles.infobox}>
-            <div className={styles.left}>
-              <FaEnvelope className={styles.sicon} />
-            </div> 
-            <div className={styles.right}>
-              <h2 className={styles.sstitle}>EMAIL</h2>
-              <p className={styles.ssdes}>Info@gmail.com</p>
-            </div> 
-          </div>
+  <div className={styles.left}>
+    <FaEnvelope className={styles.sicon} />
+  </div>
+  <div className={styles.right}>
+    <h2 className={styles.sstitle}>EMAIL</h2>
+    <p className={styles.ssdes}>
+      <a href="mailto:sales@cuentista.tech" style={{ color: 'inherit', textDecoration: 'none' }}>
+      sales@cuentista.tech
+      </a>
+    </p>
+  </div>
+</div>
 
-          <div className={styles.infobox}>
-            <div className={styles.left}>
-              <FaPhoneAlt className={styles.sicon} />
-            </div> 
-            <div className={styles.right}>
-              <h2 className={styles.sstitle}>PHONE</h2>
-              <p className={styles.ssdes}>+123 456 7890</p>
-            </div> 
-          </div>
+<div className={styles.infobox}>
+  <div className={styles.left}>
+    <FaPhoneAlt className={styles.sicon} />
+  </div>
+  <div className={styles.right}>
+    <h2 className={styles.sstitle}>PHONE</h2>
+    <p className={styles.ssdes}>
+      <a href="tel: +9197139 00913" style={{ color: 'inherit', textDecoration: 'none' }}>
+      +91 97139 00913
+      </a>
+    </p>
+  </div>
+</div>
 
           <div className={styles.infobox}>
             <div className={styles.left}>
@@ -134,7 +145,7 @@ export default function CustomNavbar() {
             </div> 
             <div className={styles.right}>
               <h2 className={styles.sstitle}>OFFICE HOURS</h2>
-              <p className={styles.ssdes}>Sat - Wed : 8:00 - 4:00</p>
+              <p className={styles.ssdes}>Mon - Fri : 10:00 - 7:00</p>
             </div> 
           </div>
 
@@ -144,28 +155,26 @@ export default function CustomNavbar() {
               <Link href="/about" className={styles.menuLink} style={{ marginLeft: '0px !important' }}>About</Link>
             </li>
             <li>
-              <Link href="/project" className={styles.menuLink}>Project</Link>
+              <Link href="/services" className={styles.menuLink}>Services</Link>
             </li>
             <li>
-              <Link href="/login" className={styles.menuLink}>Login</Link>
+              <Link href="/contact" className={styles.menuLink}>Contact</Link>
             </li>
-            <li>
-              <Link href="/register" className={styles.menuLink}>Register</Link>
-            </li>
+           
           </ul>
 
           <h4 className={styles.stitle} style={{ marginTop: '20px' }}>Connect With Us</h4>
           <div className="d-flex my-5 ">
-            <Link href="https://www.facebook.com" passHref>
+            <Link href="#" passHref>
               <FaFacebook style={{ color: '#3b5998', marginRight: '25px', marginLeft: '20px', fontSize: '2rem' }} />
             </Link>
-            <Link href="https://www.twitter.com" passHref>
+            <Link href="#" passHref>
               <FaTwitter style={{ color: '#1DA1F2', marginRight: '25px', fontSize: '2rem' }} />
             </Link>
-            <Link href="https://www.instagram.com" passHref>
+            <Link href="#" passHref>
               <FaInstagram style={{ color: '#C13584', marginRight: '25px', fontSize: '2rem' }} />
             </Link>
-            <Link href="https://www.youtube.com" passHref>
+            <Link href="#" passHref>
               <FaYoutube style={{ color: '#FF0000', marginRight: '10px', fontSize: '2rem' }} />
             </Link>
           </div>

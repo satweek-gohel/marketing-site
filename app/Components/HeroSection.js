@@ -24,7 +24,8 @@ const HeroSection = () => {
             <h2 className={styles.heading}>Flexible Solution For</h2>
             <h2 className={styles.heading2}>Your Bussiness Needs</h2>
             <p className={styles.description}>
-            Affixed pretend account ten natural. Need eat week even yet that. Incommode delighted he resolving sportsmen do in listening.
+            Cuentista Tech provides a total end-to-end solution.
+
             </p>
             <Button variant="primary" href="/contact" style={{ fontSize: '1.25rem', padding: '10px 20px',borderRadius:'10px', fontWeight:'400' }}>
               Contact Us 

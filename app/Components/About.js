@@ -58,7 +58,7 @@ const About = () => {
           <Col md={6} className="text-md-start text-center " data-aos="fade-up">
          
             <h2 className={styles.heading2}>We Help IT Companies Scale Engineering Capacity</h2>
-            <p className={styles.description2}>
+            <p className={styles.description2} style={{textAlign:'justify'}}>
             We have seen many businesses in the past pay a lot for subpar services from companies that do not care about their clients. Currently when almost, anything is possible in the technology world. We decided we need to help clients optimize their business practices and tasks using the latest technology at affordable pricing. We can suggest multiple solutions for your project or problem and help you decide what technology is the best to fit your needs.
 Our team is fully capable of getting your next project, solution, or company to where it needs to be. Our goal is to be able to grow with your business and its needs for an IT solution while providing it at an affordable rate.
 
