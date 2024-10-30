@@ -8,75 +8,8 @@ import 'aos/dist/aos.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from '../styles/OurTeam.module.css';
+import { teamMembers } from './Constants/enums';
 
-const teamMembers = [
-  {
-    id: 1,
-    name: 'Rishit Dubey',
-    role: 'CEO/Co-Founder',
-    imageUrl: 'https://t4.ftcdn.net/jpg/02/44/43/69/360_F_244436923_vkMe10KKKiw5bjhZeRDT05moxWcPpdmb.jpg',
-    socials: {
-      facebook: '#',
-      twitter: '#',
-      linkedin: '#',
-    },
-  },
-  {
-    id: 2,
-    name: 'Shraddha Mishra',
-    role: 'Project Manager',
-    imageUrl: 'https://www.shutterstock.com/image-vector/person-gray-photo-placeholder-woman-600nw-1241538838.jpg',
-    socials: {
-      facebook: '#',
-      twitter: '#',
-      linkedin: '#',
-    },
-  },
-  {
-    id: 3,
-    name: 'Suchita Dubey',
-    role: 'Director',
-    imageUrl: 'https://www.shutterstock.com/image-vector/person-gray-photo-placeholder-woman-600nw-1241538838.jpg',
-    socials: {
-      facebook: '#',
-      twitter: '#',
-      linkedin: '#',
-    },
-  },
-  {
-    id: 4,
-    name: 'Manuraj Dubey',
-    role: 'Director',
-    imageUrl: 'https://t4.ftcdn.net/jpg/02/44/43/69/360_F_244436923_vkMe10KKKiw5bjhZeRDT05moxWcPpdmb.jpg',
-    socials: {
-      facebook: '#',
-      twitter: '#',
-      linkedin: '#',
-    },
-  },
-  {
-    id: 5,
-    name: 'Nilesh Solanki',
-    role: 'CIO',
-    imageUrl: 'https://t4.ftcdn.net/jpg/02/44/43/69/360_F_244436923_vkMe10KKKiw5bjhZeRDT05moxWcPpdmb.jpg',
-    socials: {
-      facebook: '#',
-      twitter: '#',
-      linkedin: '#',
-    },
-  },
-  {
-    id: 6,
-    name: 'Charisma Megayana',
-    role: 'Head of Marketing',
-    imageUrl: 'https://www.shutterstock.com/image-vector/person-gray-photo-placeholder-woman-600nw-1241538838.jpg',
-    socials: {
-      facebook: '#',
-      twitter: '#',
-      linkedin: '#',
-    },
-  },
-];
 
 const OurTeam = () => {
   const [activeMember, setActiveMember] = useState(null);
@@ -138,20 +71,7 @@ const OurTeam = () => {
               <div className={styles.teamMember} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
                 <div className={styles.imageWrapper}>
                   <img src={member.imageUrl} alt={member.name} className={styles.teamImage} />
-                  {/* <div className={styles.iconContainer}>
-                    <FaUser className={styles.userIcon} onClick={() => handleIconClick(index)} />
-                    <div className={`${styles.socialIcons} ${activeMember === index ? styles.visible : ''}`}>
-                      <a href={member.socials.facebook} target="_blank" rel="noreferrer">
-                        <FaFacebook style={{ color: '#3b5998', backgroundColor: 'white', borderRadius: '50%', padding: '5px' }} />
-                      </a>
-                      <a href={member.socials.twitter} target="_blank" rel="noreferrer">
-                        <FaTwitter style={{ color: '#1da1f2', backgroundColor: 'white', borderRadius: '50%', padding: '5px' }} />
-                      </a>
-                      <a href={member.socials.linkedin} target="_blank" rel="noreferrer">
-                        <FaLinkedin style={{ color: '#0077b5', backgroundColor: 'white', borderRadius: '50%', padding: '5px' }} />
-                      </a>
-                    </div>
-                  </div> */}
+                 
                 </div>
                 <div className={styles.memberInfo}>
                   <h3>{member.name}</h3>

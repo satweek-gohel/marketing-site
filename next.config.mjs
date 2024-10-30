@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     // Enable static export
-    output: 'export',
     images: {
-        unoptimized: true
-    }
+        domains: ['cuentista-tech-be.onrender.com'],
+      },
 };
 
 export default nextConfig;

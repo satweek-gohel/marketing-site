@@ -39,11 +39,20 @@ export default function ContactUs() {
     }));
   };
 
+  const formatPhoneNumber = (phoneValue) => {
+    // Extract country code and number
+    const countryCode = phoneValue.substring(0, 2);
+    const number = phoneValue.substring(2);
+    
+    // Format as +XX-XXXXXXXXXX
+    return `+${countryCode}-${number}`;
+  };
+
   const handlePhoneChange = (value) => {
     setPhone(value);
     setFormData(prev => ({
       ...prev,
-      phone_number: value
+      phone_number: formatPhoneNumber(value)
     }));
   };
 

@@ -1,32 +1,62 @@
-'use client'; // Ensures this is a Client Component
+'use client';
 
 import { Container, Navbar, Nav, Offcanvas, NavDropdown, Button } from "react-bootstrap";
-import { FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaClock, FaYoutube, FaEnvelope } from "react-icons/fa"; // Social Icons and Clock Icon
+import { FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaClock, FaYoutube, FaEnvelope } from "react-icons/fa";
 import Image from 'next/image';
-import styles from '../styles/Navbar.module.css'; // Custom CSS for primary/secondary colors
-import { HiMenu } from 'react-icons/hi'; // Example using a different icon library
-import { MdMenuOpen } from 'react-icons/md'; // Import MdMenuOpen
-import { useState, useEffect } from 'react'; // To manage the sidebar state
+import styles from '../styles/Navbar.module.css';
+import { HiMenu } from 'react-icons/hi';
+import { MdMenuOpen } from 'react-icons/md';
+import { useState, useEffect,useRef } from 'react';
 import Link from "next/link";
-import { useRouter } from 'next/navigation'; // Importing useRouter
+import { useRouter } from 'next/navigation';
+import { getProductsList } from "../api/comman";
 
 export default function CustomNavbar() {
-  const [showSidebar, setShowSidebar] = useState(false); // State for sidebar visibility
-  const [currentPath, setCurrentPath] = useState(''); // To store the current path
-  const router = useRouter(); // Use useRouter inside the component body
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [currentPath, setCurrentPath] = useState('');
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+  const dropdownTimeoutRef = useRef(null);
 
+  const [showProductsDropdown, setShowProductsDropdown] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setCurrentPath(router.pathname); // Store the current path
+      setCurrentPath(router.pathname);
     }
-  }, [router.pathname]); 
+  }, [router.pathname]);
+
+  // Fetch products from API
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const productsData = await getProductsList();
+            setProducts(productsData.data.data);
+           
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   const handleSidebarClose = () => setShowSidebar(false);
   const handleSidebarShow = () => setShowSidebar(true);
-
+  const handleProductsDropdownEnter = () => {
+    setShowProductsDropdown(true);
+    clearTimeout(dropdownTimeoutRef.current);
+  };
+  
+  const handleProductsDropdownLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setShowProductsDropdown(false);
+    }, 300); // Hide the dropdown after 300ms (0.3 seconds)
+  };
   return (
     <header style={{ zIndex: '999 !important' }}>
-      {/* Main Navbar */}
       <Navbar bg="white" expand="lg" className="border-bottom" style={{ zIndex: '999 !important' }}>
         <Container style={{ zIndex: '999 !important' }}>
           <Navbar.Brand href="/">
@@ -40,12 +70,9 @@ export default function CustomNavbar() {
             />
           </Navbar.Brand>
 
-          {/* Custom Toggle Icon */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" className="border-0 p-0">
             <HiMenu style={{ fontSize: '1.5rem', color: '#0d6efd' }} />
           </Navbar.Toggle>
-
-         
 
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className={`mx-auto ${styles.menu}`} id="menu">
@@ -67,23 +94,40 @@ export default function CustomNavbar() {
               >
                 Services
               </Nav.Link>
-             
 
-              {/* Dropdown for Products */}
-              
-              <NavDropdown 
-                title="Products" 
-                id="productsDropdown" 
-                className={styles.menuLink2}
-                style={{ zIndex: '999 !important' }}
-              >
-                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/dynamics-365">Dynamic 365</NavDropdown.Item>
-                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/microsoft-office-365">Office 365</NavDropdown.Item>
-                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/microsoft-power-platform">Power Platofrm</NavDropdown.Item>
-                <NavDropdown.Item style={{ zIndex: '999 !important' }} as={Link} href="/products/microsoft-sustainability-manager">Sustainability Manager</NavDropdown.Item>
-               
-              </NavDropdown>
-              
+              {/* Dynamic Products Dropdown */}
+              <Nav.Link
+              href="#"
+              className={`${styles.menuLink} ${styles.menuLink2}`}
+              onMouseEnter={handleProductsDropdownEnter}
+              onMouseLeave={handleProductsDropdownLeave}
+            >
+              Products
+              {showProductsDropdown && (
+                <div
+                  className={`${styles.productsDropdown} dropdown-menu show`}
+                  onMouseEnter={handleProductsDropdownEnter}
+                  onMouseLeave={handleProductsDropdownLeave}
+                >
+                  {loading ? (
+                    <div className="dropdown-item">Loading...</div>
+                  ) : products.length > 0 ? (
+                    products.map((product) => (
+                      <div
+                        key={product.id}
+                        className="dropdown-item"
+                        onClick={() => router.push(`/products/${product.productUrl}`)}
+                      >
+                        {product.product_name}
+                      </div>
+                    ))
+                  ) : (
+                    <div className="dropdown-item">No products available</div>
+                  )}
+                </div>
+              )}
+            </Nav.Link>
+
               <Nav.Link 
                 href="/contact" 
                 className={`${styles.menuLink} ${currentPath === '/contact' ? styles.active : ''}`}
@@ -92,14 +136,11 @@ export default function CustomNavbar() {
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          
 
-          <Button variant="outline" onClick={handleSidebarShow}  className={styles.sidebarButton} >
-        <MdMenuOpen color="var(--text-color)" size={25} />
-      </Button>
+          <Button variant="outline" onClick={handleSidebarShow} className={styles.sidebarButton}>
+            <MdMenuOpen color="var(--text-color)" size={25} />
+          </Button>
         </Container>
-
-        
       </Navbar>
 
      

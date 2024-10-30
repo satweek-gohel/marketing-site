@@ -9,7 +9,7 @@ function app() {
        <PageBanner title="Services" backgroundImage="/about-banner.jpg" /> 
        <ServiceCard />
        <WhyChooseUs />    
-       {/* <LogoCarousel /> */}
+       
         </>
   )
 }

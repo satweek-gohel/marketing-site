@@ -6,28 +6,10 @@ import Head from 'next/head';
 import styles from '../styles/PopularNews.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { newsData } from './Constants/enums';
 
-// Mock data to replace the API call
-const newsData = [
-  {
-    title: "Additions in conveying or collected objection",
-    publishedAt: "2020-08-12T00:00:00Z",
-    author: "John Botha",
-    urlToImage: "/news1.jpg", // Replace with your image path
-  },
-  {
-    title: "Discourse ye continued pronounce we abilities",
-    publishedAt: "2020-10-05T00:00:00Z",
-    author: "Jork Mon",
-    urlToImage: "/news2.jpg", // Replace with your image path
-  },
-  {
-    title: "Children greatest online extended delicate of",
-    publishedAt: "2020-12-27T00:00:00Z",
-    author: "Spark Lee",
-    urlToImage: "/news3.jpg", // Replace with your image path
-  },
-];
+
+
 
 const PopularNews = () => {
   useEffect(() => {

@@ -3,8 +3,8 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaLaptopCode, FaCloud, FaLock } from 'react-icons/fa'; // Import service icons
-import styles from '../styles/OurServices.module.css'; // Import your CSS file
+import { FaLaptopCode, FaCloud, FaLock } from 'react-icons/fa'; 
+import styles from '../styles/OurServices.module.css'; 
 
 const OurServices = () => {
   // Slick settings

@@ -39,6 +39,14 @@
     margin-bottom: 2rem;
 }
 
+.numberLabel{
+    font-size: 48px;
+  color: white !important;
+  margin-bottom: 10px;
+  -webkit-text-stroke: 1px var(--primary-color); /* For WebKit browsers like Chrome, Safari */
+  
+}
+
 .readMore {
     background-color: transparent;
     border: 2px solid lightgrey;

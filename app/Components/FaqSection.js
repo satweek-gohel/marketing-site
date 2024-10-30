@@ -7,6 +7,7 @@ import Head from 'next/head';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import styles from '../styles/FaqSection.module.css';
+import { faqs } from './Constants/enums';
 
 const FaqSection = () => {
   const [open, setOpen] = useState([false, false, false]);
@@ -20,20 +21,7 @@ const FaqSection = () => {
     });
   }, []);
 
-  const faqs = [
-    {
-      question: 'How can I contact support?',
-      answer: 'You can contact support via email, chat, or phone through our support page.',
-    },
-    {
-      question: 'What is the refund policy?',
-      answer: 'We offer a full refund within 30 days of purchase if you are unsatisfied with the service.',
-    },
-    {
-      question: 'Do you provide 24/7 customer support?',
-      answer: 'Yes, we provide round-the-clock support for all our services.',
-    },
-  ];
+  
 
   const toggleFaq = (index) => {
     const newOpen = [...open];

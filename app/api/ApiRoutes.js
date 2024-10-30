@@ -1,1 +1,5 @@
 export const INQUIRY = "/api/inquiry/createInquiry"
+export const GET_PRODUCT = "/api/customer/viewProduct"
+export const GET_SERVICE = "/api/customer/viewService"
+export const GET_PRODUCT_LIST = "/api/customer/getProductList"
+export const GET_SERVICES_LIST = "/api/customer/getServiceList"

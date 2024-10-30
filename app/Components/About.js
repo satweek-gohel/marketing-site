@@ -64,49 +64,7 @@ Our team is fully capable of getting your next project, solution, or company to 
 
             </p>
           
-            {/* Vertical Icon List */}
-            {/* <div className={styles.iconList}>
-              <div className={styles.iconItem} data-aos="fade-up" data-aos-delay="100">
-              <Image
-                  src="/diploma.png" 
-                  alt="award"
-                  width={50} // Adjusted width for icon
-                  height={50} // Adjusted height for icon
-                  className={styles.icon} // Add class for styling if needed
-                />
-                <div className={styles.textContainer}>
-                  <h4 className={styles.heading}>Certified Company</h4>
-                  <p className={styles.description}>Assurance yet bed was improving furniture man. Distrusts delighted she listening.</p>
-                </div>
-              </div>
-              <div className={styles.iconItem} data-aos="fade-up" data-aos-delay="200">
-               
-                <Image
-                  src="/award-star-with-olive-branches.png" 
-                  alt="award"
-                  width={50} // Adjusted width for icon
-                  height={50} // Adjusted height for icon
-                  className={styles.icon} // Add class for styling if needed
-                />
-                <div className={styles.textContainer}>
-                  <h4 className={styles.heading}>Award Ceremony</h4>
-                  <p className={styles.description}>Assurance yet bed was improving furniture man. Distrusts delighted she listening mrs extensive.</p>
-                </div>
-              </div>
-              <div className={styles.iconItem} data-aos="fade-up" data-aos-delay="300">
-                <Image
-                  src="/sign.png" 
-                  alt="Founders Sign"
-                  width={50} // Adjusted width for icon
-                  height={50} // Adjusted height for icon
-                  className={styles.icon} // Add class for styling if needed
-                />
-                <div className={styles.textContainer}>
-                  <h4 className={styles.heading}>Spark Moun</h4>
-                  <p className={styles.description}>Chairman & Founder Techa</p>
-                </div>
-              </div>
-            </div> */}
+           
           </Col>
         </Row>
       </Container>

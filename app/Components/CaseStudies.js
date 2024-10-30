@@ -5,21 +5,11 @@ import Slider from "react-slick";
 import styles from '../styles/CaseStudies.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { statsData } from './Constants/enums';
+
 
 // Carousel images
-const carouselImages = [
-  {id:1, src: '/cs1.jpg', title: 'IT Consultancy', description: '- Technology' },
-  {id:2, src: '/cs2.jpg', title: 'Analysis Of Security', description: '- Technology' },
-  {id:3, src: '/cs3.jpg', title: 'Social Media App', description: '- Technology' },
-  {id:4, src: '/cs4.jpg', title: 'Cyber Security', description: '- Technology' },
-];
 
-const statsData = [
-  { id:1,label: "Happy Clients", value: 92 },
-  { id:2,label: "Finished Projects", value: 1200 },
-  { id:3,label: "Skilled Experts", value: 55 },
-  // { id:4,label: "Media Posts", value: 1200 }
-];
 
 const CaseStudies = () => {
   const [counters, setCounters] = useState([0, 0, 0, 0]);
@@ -68,34 +58,7 @@ const CaseStudies = () => {
   return (
     <section className={styles.caseStudiesSection}>
       <Container>
-        {/* <Row>
-          <Col>
-            <div className={styles.headingContainer} data-aos="fade-up">
-              <h3 className={styles.heading}>CASE STUDIES</h3>
-              <h2 className={styles.subheading}>Our Work Showcase</h2>
-              <div className={styles.line}></div>
-            </div>
-          </Col>
-        </Row>
-
-      
-        <Row>
-          <Col>
-            <Slider {...settings} className={styles.carousel}>
-              {carouselImages.map((img, index) => (
-                <div key={img.id} className={styles.imageWrapper} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
-                  <img src={img.src} alt={img.title} className={styles.carouselImage} />
-                  <div className={styles.overlay}>
-                    <div className={styles.overlayContent}>
-                      <h3>{img.title}</h3>
-                      <p>{img.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </Slider>
-          </Col>
-        </Row> */}
+       
 
         {/* Stats Section */}
         <Row className={styles.statsRow}>
